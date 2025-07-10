@@ -46,8 +46,9 @@
 							<!-- Application info block: center-left aligned, white text, button centered under text -->
 							<div class="apply-animate-in" style="display: flex; flex-direction: column; align-items: center; margin: 0 auto 1.5em auto; max-width: 520px; background: #23253a; border-radius: 8px; padding: 1.2em 1.5em;">
 								<div style="font-size: 1.08em; color: #fff; line-height: 1.6; margin-bottom: 0.8em; text-align: left; width: 100%;">
-									Our first series of in-person workshops on <b>[fill in]</b> will be held <b>[fill in]</b>.<br>
-									Meal and lodging expenses are covered, and travel support is available for those who otherwise could not attend.
+									Our first series of in-person workshops on <b>[fill in]</b> will be held <b>[fill in]</b>.<br> <br>
+									Our intended audience is students; however, we have no specific age or education requirement. If you would like to attend a workshop, we encourage you to apply! <br> <br>
+									Meal and lodging expenses are fully covered, and travel support is available for those who otherwise could not attend.
 								</div>
 								<a href="#" style="padding: 0.6em 2.2em; background: #4c5c96; color: #fff !important; border-radius: 4px; font-size: 1.1em; font-weight: 600; text-decoration: none; letter-spacing: 0.03em; box-shadow: 0 2px 8px rgba(44,44,44,0.07); transition: background 0.2s; margin-top: 0.2em;">Apply</a>
 							</div>
@@ -55,28 +56,29 @@
 					</section>
 
 				<!-- Wrapper -->
-					<section id="wrapper" style="margin-bottom: 4em;">
+					<section id="wrapper">
 						<header>
-							<div class="inner" style="max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 2.5em; justify-content: center; align-items: flex-start;">
-								<div class="mission-block" style="flex: 1 1 320px; min-width: 260px; max-width: 420px; text-align: left;">
-									<h3 style="font-size: 1.2em; color: #23253a; margin-bottom: 0.5em; font-weight: 700;">Mission</h3>
-									<p style="font-size: 1.08em; color: #23253a; margin-bottom: 0;">
-										The Critical Explorations Initiative drives research and education in philosophy, creativity, and topics related to advanced AI.
-									</p>
-								</div>
-								<div class="pillars-block" style="flex: 1 1 320px; min-width: 260px; max-width: 420px; text-align: left;">
-									<h3 style="font-size: 1.1em; color: #23253a; margin-bottom: 0.4em; font-weight: 700;">Core Pillars</h3>
-									<ul class="pillars-list" style="list-style: disc inside; padding-left: 1.1em; color: #23253a; margin: 0;">
-										<li>Cultivating collective inquiry and exploration</li>
-										<li>Inspiring creative approaches to knowledge and discovery</li>
-										<li>Bridging science, philosophy, and technology for a more thoughtful future</li>
-									</ul>
+							<div class="inner" style="max-width: 900px; margin: 0 auto;">
+								<h2 style="font-size: 1.8em; color: #23253a; margin-bottom: 1.2em; font-weight: 700; text-align: center;">About the Initiative</h2>
+								<div style="display: flex; flex-wrap: wrap; gap: 3em; justify-content: center; align-items: flex-start; margin-top: 2em;">
+									<div class="mission-block animate-on-scroll" style="flex: 1 1 320px; min-width: 260px; max-width: 420px; text-align: left; background: rgba(255, 255, 255, 0.9); padding: 2em; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+										<h3 style="font-size: 1.3em; color: #23253a; margin-bottom: 0.8em; font-weight: 700;">Mission</h3>
+										<p style="font-size: 1.1em; color: #23253a; margin-bottom: 0; line-height: 1.6;">
+											The Critical Explorations Initiative drives research and education in philosophy, creativity, and topics related to advanced AI.
+										</p>
+									</div>
+									<div class="pillars-block animate-on-scroll" style="flex: 1 1 320px; min-width: 260px; max-width: 420px; text-align: left; background: rgba(255, 255, 255, 0.9); padding: 2em; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+										<h3 style="font-size: 1.3em; color: #23253a; margin-bottom: 0.8em; font-weight: 700;">Core Pillars</h3>
+										<ul class="pillars-list" style="list-style: disc outside; padding-left: 1.5em; color: #23253a; font-size: 1.05em; margin: 0; line-height: 1.6;">
+											<li style="margin-bottom: 0.8em;">Cultivating collective inquiry and exploration</li>
+											<li style="margin-bottom: 0.8em;">Inspiring creative approaches to knowledge and discovery</li>
+											<li>Bridging science, philosophy, and technology for a more thoughtful future</li>
+										</ul>
+									</div>
 								</div>
 							</div>
 						</header>
-						
-
-				</div>
+					</section>
 
 <footer id="footer" class="footer-spread" style="background: #fff; border-top: 1px solid #e0e0e0; padding: 1em 0 0.7em 0;">
   <div class="inner footer-flex" style="max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: stretch; gap: 3em; min-height: 160px;">
@@ -114,6 +116,26 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/header-loader.js"></script>
 			<script src="assets/js/main.js"></script>
+		<script>
+			// Scroll animation observer
+			const observerOptions = {
+				threshold: 0.1,
+				rootMargin: '0px 0px -50px 0px'
+			};
 
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('visible');
+					}
+				});
+			}, observerOptions);
+
+			// Observe all elements with animate-on-scroll class
+			document.addEventListener('DOMContentLoaded', () => {
+				const animatedElements = document.querySelectorAll('.animate-on-scroll');
+				animatedElements.forEach(el => observer.observe(el));
+			});
+		</script>
 	</body>
 </html>

@@ -99,7 +99,11 @@ input, select, textarea {
 	}
 
 	body {
-		background: #fff !important;
+		background: #f5f1e8 !important;
+		background-image: linear-gradient(to top, rgba(245, 241, 232, 0.3), rgba(245, 241, 232, 0.3)), url("../../images/journey.png") !important;
+		background-size: cover !important;
+		background-attachment: fixed !important;
+		background-position: center !important;
 		/* background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg"); */
 		/* background-size: auto, cover; */
 		/* background-attachment: fixed, fixed; */
@@ -3389,10 +3393,11 @@ input, select, textarea {
 
 	#banner {
 		padding: 10em 0 4.75em 0 ;
-		background: #fff !important;
+		background: transparent !important;
 		/* background-color: #2e3141; */
 		/* background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg"); */
 		/* background-size: auto, cover; */
+		/* background-attachment: fixed, fixed; */
 		/* background-position: center, center; */
 	}
 
@@ -3565,7 +3570,7 @@ input, select, textarea {
 
 	#wrapper > header {
 		padding: 11em 0 2.25em 0 ;
-		background: #fff !important;
+		background: transparent !important;
 		/* background-color: #2e3141; */
 		/* background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg"); */
 		/* background-size: auto, cover; */
@@ -3740,4 +3745,87 @@ a:hover, a:active {
     max-width: 100% !important;
     min-width: 0 !important;
   }
+}
+
+/* Scroll animations */
+@keyframes fadeInUpScroll {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Improve wrapper header spacing */
+#wrapper > header {
+  padding: 6em 0 4em 0 !important;
+  background: transparent !important;
+  margin-bottom: 2em !important;
+}
+
+#wrapper > header .inner {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Better text contrast for readability */
+.mission-block, .pillars-block {
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mission-block h3, .pillars-block h3 {
+  color: #1a1a1a !important;
+  font-weight: 700 !important;
+  font-family: Raleway, Helvetica, sans-serif !important;
+  font-size: 1.3em !important;
+  letter-spacing: 0.05em !important;
+  text-transform: none !important; /* Override global uppercase */
+}
+
+.mission-block p, .pillars-block p, .pillars-block li {
+  color: #333 !important;
+  font-weight: 400 !important;
+  font-family: "Source Sans Pro", Helvetica, sans-serif !important;
+  font-size: 1.05em !important;
+  line-height: 1.6 !important;
+  text-transform: none !important; /* Ensure no text transform */
+  margin: 0 !important; /* Override global ul margin */
+  padding-left: 0 !important; /* Override global ul padding */
+}
+
+/* Override global ul styles specifically for pillars */
+.pillars-block ul {
+  margin: 0 !important;
+  padding-left: 0 !important;
+  list-style: disc outside !important;
+}
+
+.pillars-block ul li {
+  padding-left: 0 !important;
+  margin-bottom: 0.8em !important;
+}
+
+.pillars-block ul li:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Ensure footer has proper spacing */
+#footer {
+  margin-top: 2em !important;
 }
