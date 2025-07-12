@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Philosophy of Mind | Critical Explorations Initiative</title>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <style>
+    .reading-levels-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2em;
+      justify-content: center;
+      margin-top: 2em;
+    }
+    .reading-level-card {
+      background: rgba(255,255,255,0.97);
+      border-radius: 14px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      padding: 2em 1.5em 1.5em 1.5em;
+      width: 220px;
+      min-height: 140px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.18s cubic-bezier(.4,2,.6,1), box-shadow 0.18s;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInUpCard 0.7s forwards;
+    }
+    .reading-level-card:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+    }
+    .reading-level-card .icon {
+      font-size: 2em;
+      margin-bottom: 0.5em;
+      color: #4c5c96;
+    }
+    .reading-level-card h3 {
+      color: #23253a;
+      font-size: 1.1em;
+      font-weight: 700;
+      margin-bottom: 0.3em;
+      margin-top: 0;
+    }
+    .reading-level-card p {
+      color: #444;
+      font-size: 0.98em;
+      margin: 0;
+    }
+    @keyframes fadeInUpCard {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .reading-level-card:nth-child(1) { animation-delay: 0.1s; }
+    .reading-level-card:nth-child(2) { animation-delay: 0.22s; }
+    .reading-level-card:nth-child(3) { animation-delay: 0.34s; }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Philosophy of Mind | Critical Explorations Initiative</title>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <style>
+    /* ... your card styles ... */
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <!-- HARDCODED HEADER START -->
+  <header id="header" class="alt" style="display: flex; align-items: center; justify-content: flex-start; padding: 0 2em; background: #fff; min-height: 80px; border-bottom: 1px solid #e0e0e0;">
+    <div style="display: flex; align-items: center; gap: 0.7em;">
+      <a href="../../index.html" style="display: flex; align-items: center; text-decoration: none;">
+        <img src="../../images/logo.png" alt="Critical Explorations Initiative Logo" style="height: 40px; width: auto; margin-right: 0.4em;" />
+        <span style="display: flex; flex-direction: column; font-size: 1.1em; font-weight: 700; color: #23253a; font-family: Raleway, Helvetica, sans-serif; letter-spacing: 0.01em; line-height: 1.1;">
+          <span>Critical</span>
+          <span>Explorations</span>
+          <span>Initiative</span>
+        </span>
+      </a>
+    </div>
+    <nav style="margin-left: 2em;">
+      <ul class="main-nav" style="display: flex; align-items: center; gap: 2em; list-style: none; margin: 0; padding: 0;">
+        <li class="dropdown" style="position: relative;">
+          <a class="menu-education" style="cursor: pointer; color: #23253a; font-weight: 600; font-size: 1em; text-decoration: none;">Education <span class="arrow" style="font-size: 1em;">&#9662;</span></a>
+          <ul class="submenu" style="position: absolute; right: 0; top: 100%; background: #fff; min-width: 180px; display: none; box-shadow: 0 8px 16px rgba(0,0,0,0.15); border-radius: 0 0 5px 5px; padding: 0.5em 0; z-index: 10001;">
+            <li><a href="../../past-workshops.html" style="color: #23253a; padding: 0.5em 1.5em; display: block; text-decoration: none;">Past Workshops</a></li>
+            <li><a href="../../upcoming-workshops.html" style="color: #23253a; padding: 0.5em 1.5em; display: block; text-decoration: none;">Upcoming Workshops</a></li>
+            <li><a href="../../reading-list.html" style="color: #23253a; padding: 0.5em 1.5em; display: block; text-decoration: none;">Reading List</a></li>
+          </ul>
+        </li>
+        <li><a href="../../research.html" class="menu-research" style="color: #23253a; font-weight: 600; font-size: 1em; text-decoration: none;">Research</a></li>
+        <li><a href="../../newsletter.html" class="menu-newsletter" style="color: #23253a; font-weight: 600; font-size: 1em; text-decoration: none;">Newsletter</a></li>
+        <li><a href="../../about.html" class="menu-about" style="color: #23253a; font-weight: 600; font-size: 1em; text-decoration: none;">About</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- HARDCODED HEADER END -->
+  <section style="max-width: 900px; margin: 3em auto 4em auto; background: rgba(255,255,255,0.93); border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); padding: 2.5em;">
+    <h2 style="text-align: center; color: #23253a; font-size: 2em; font-weight: 700; margin-bottom: 1.5em;">Philosophy of Mind</h2>
+    <div class="reading-levels-grid">
+      <a class="reading-level-card" href="philosophy-of-mind-introductory.html">
+        <span class="icon"><i class="fa-solid fa-seedling"></i></span>
+        <h3>Introductory</h3>
+        <p>Accessible overviews and foundational texts for newcomers.</p>
+      </a>
+      <a class="reading-level-card" href="philosophy-of-mind-intermediate.html">
+        <span class="icon"><i class="fa-solid fa-book-open"></i></span>
+        <h3>Intermediate</h3>
+        <p>Deeper explorations and classic works in the field.</p>
+      </a>
+      <a class="reading-level-card" href="philosophy-of-mind-advanced.html">
+        <span class="icon"><i class="fa-solid fa-microscope"></i></span>
+        <h3>Advanced</h3>
+        <p>Scholarly and technical works for advanced study.</p>
+      </a>
+    </div>
+    <p style="margin-top:2em; font-size:1em; color:#444; text-align:center;">
+      <a href="../../reading-list.html">&larr; Back to Reading List</a>
+    </p>
+  </section>
+  <div id="site-footer"></div>
+  <script src="../../assets/js/header-loader.js"></script>
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html> 
