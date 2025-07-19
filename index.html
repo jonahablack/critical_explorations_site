@@ -5,137 +5,147 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Critical Explorations Initiative</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<link rel="icon" type="image/png" href="images/logo.png" />
-		<style>
-			@keyframes fadeInUpBox {
-				from {
-					opacity: 0;
-					transform: translateY(40px);
-				}
-				to {
-					opacity: 1;
-					transform: translateY(0);
-				}
-			}
-			.apply-animate-in {
+<head>
+	<title>Critical Explorations Initiative</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<link rel="icon" type="image/png" href="images/logo.png" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+	<style>
+		@keyframes fadeInUpBox {
+			from {
 				opacity: 0;
-				animation: fadeInUpBox 1s cubic-bezier(0.23, 1, 0.32, 1) .8s forwards;
+				transform: translateY(40px);
 			}
-		</style>
-	</head>
-	<body class="is-preload">
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+		.apply-animate-in {
+			opacity: 0;
+			animation: fadeInUpBox 1s cubic-bezier(0.23, 1, 0.32, 1) .8s forwards;
+		}
+		h2, h3 {
+			font-family: 'Merriweather', serif;
+		}
+		@media (max-width: 768px) {
+			.mission-block {
+				margin-bottom: 2em !important;
+			}
+		}
+		.pillars-block ul li {
+			transition: all 0.2s ease;
+		}
+	</style>
+</head>
+<body class="is-preload">
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+<!-- Page Wrapper -->
+<div id="page-wrapper">
 
-				<!-- Header (shared across all pages) -->
-<div id="site-header"></div>
+	<!-- Header (shared across all pages) -->
+	<div id="site-header"></div>
 
-				<!-- Remove the old #menu nav entirely from the homepage -->
+	<!-- Banner -->
+	<section id="banner">
+		<div class="inner">
+			<p class="banner-lead animate-fade-in">Exploring new frontiers in the age of AI</p>
+			<div class="apply-animate-in" style="display: flex; flex-direction: column; align-items: center; margin: 0 auto 1.5em auto; max-width: 520px; background: #23253a; border-radius: 8px; padding: 1.2em 1.5em;">
+				<div style="font-size: 1.08em; color: #fff; line-height: 1.6; margin-bottom: 0.8em; text-align: left; width: 100%;">
+					Our first series of in-person workshops will be announced soon. <br><br>
+					Our intended audience is students; however, we have no specific age or education requirement. If you would like to attend a workshop, you can register your interest below! More information regarding the application and selection process will be released soon.<br><br>
+					Meal and lodging expenses are covered in full, and travel support is available for those who otherwise could not attend.
+				</div>
+				<a href="https://docs.google.com/forms/d/e/1FAIpQLSeRboYHCxPrlIIViksVC_oCDDOxpwtbmwof01GkSCYpQOMKCA/viewform?usp=dialog" target="_blank" rel="noopener" style="padding: 0.6em 2.2em; background: #4c5c96; color: #fff !important; border-radius: 4px; font-size: 1.1em; font-weight: 600; text-decoration: none; letter-spacing: 0.03em; box-shadow: 0 2px 8px rgba(44,44,44,0.07); transition: background 0.2s; margin-top: 0.2em;">Register Interest</a>
+			</div>
+		</div>
+	</section>
 
-				<!-- Banner -->
-					<section id="banner">
-						<div class="inner">
-							<p class="banner-lead animate-fade-in">Exploring new frontiers in the age of AI</p>
-							<!-- Application info block: center-left aligned, white text, button centered under text -->
-							<div class="apply-animate-in" style="display: flex; flex-direction: column; align-items: center; margin: 0 auto 1.5em auto; max-width: 520px; background: #23253a; border-radius: 8px; padding: 1.2em 1.5em;">
-								<div style="font-size: 1.08em; color: #fff; line-height: 1.6; margin-bottom: 0.8em; text-align: left; width: 100%;">
-									Our first series of in-person workshops will be announced soon. <br> <br>
-									Our intended audience is students; however, we have no specific age or education requirement. If you would like to attend a workshop, we encourage you to apply! <br> <br>
-									Meal and lodging expenses are covered in full, and travel support is available for those who otherwise could not attend.
-								</div>
-								<a href="#" style="padding: 0.6em 2.2em; background: #4c5c96; color: #fff !important; border-radius: 4px; font-size: 1.1em; font-weight: 600; text-decoration: none; letter-spacing: 0.03em; box-shadow: 0 2px 8px rgba(44,44,44,0.07); transition: background 0.2s; margin-top: 0.2em;">Apply</a>
-							</div>
-						</div>
-					</section>
+	<!-- Wrapper -->
+	<section id="wrapper">
+		<header>
+			<div class="inner" style="max-width: 900px; margin: 0 auto;">
+				<h2 style="font-size: 1.8em; color: #23253a; margin-bottom: 1.2em; font-weight: 700; text-align: center;">About the Initiative</h2>
+				<div style="display: flex; flex-wrap: wrap; gap: 3em; justify-content: center; align-items: flex-start; margin-top: 2em;">
+					<div class="mission-block animate-on-scroll" style="flex: 1 1 320px; min-width: 260px; max-width: 420px; text-align: left; background: #fdfdfd; padding: 2em; border-radius: 8px; border-left: 4px solid #4c5c96; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+						<h3 style="font-size: 1.3em; color: #23253a; margin-bottom: 0.8em; font-weight: 700;">Mission</h3>
+						<p style="font-size: 1.1em; color: #23253a; margin-bottom: 0; line-height: 1.6;">
+							The Critical Explorations Initiative supports a new generation of thinkers working at the intersections of philosophy, mathematics, and empirical science. We champion foundational inquiry in an age shaped by advanced AI, rapid innovation, and conceptual upheaval.
+						</p>
+					</div>									  
+					<div class="pillars-block animate-on-scroll" style="flex: 1 1 320px; min-width: 260px; max-width: 420px; text-align: left; background: rgba(255, 255, 255, 0.9); padding: 2em; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+						<h3 style="font-size: 1.3em; color: #23253a; margin-bottom: 0.8em; font-weight: 700;">Core Pillars</h3>
+						<ul class="pillars-list" style="list-style: disc outside; padding-left: 1.5em; color: #23253a; font-size: 1.05em; margin: 0; line-height: 1.6;">
+							<li style="margin-bottom: 0.8em;">Grounding inquiry in foundational ideas across philosophy, mathematics, and the sciences</li>
+							<li style="margin-bottom: 0.8em;">Exploring the ethical, conceptual, and societal implications of advanced technologies</li>
+							<li>Fostering creative, collaborative exploration across disciplines and generations</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header>
+	</section>
 
-				<!-- Wrapper -->
-					<section id="wrapper">
-						<header>
-							<div class="inner" style="max-width: 900px; margin: 0 auto;">
-								<h2 style="font-size: 1.8em; color: #23253a; margin-bottom: 1.2em; font-weight: 700; text-align: center;">About the Initiative</h2>
-								<div style="display: flex; flex-wrap: wrap; gap: 3em; justify-content: center; align-items: flex-start; margin-top: 2em;">
-									<div class="mission-block animate-on-scroll" style="flex: 1 1 320px; min-width: 260px; max-width: 420px; text-align: left; background: rgba(255, 255, 255, 0.9); padding: 2em; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
-										<h3 style="font-size: 1.3em; color: #23253a; margin-bottom: 0.8em; font-weight: 700;">Mission</h3>
-										<p style="font-size: 1.1em; color: #23253a; margin-bottom: 0; line-height: 1.6;">
-											The Critical Explorations Initiative drives research and education in philosophy, creativity, and topics related to advanced AI.
-										</p>
-									</div>
-									<div class="pillars-block animate-on-scroll" style="flex: 1 1 320px; min-width: 260px; max-width: 420px; text-align: left; background: rgba(255, 255, 255, 0.9); padding: 2em; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
-										<h3 style="font-size: 1.3em; color: #23253a; margin-bottom: 0.8em; font-weight: 700;">Core Pillars</h3>
-										<ul class="pillars-list" style="list-style: disc outside; padding-left: 1.5em; color: #23253a; font-size: 1.05em; margin: 0; line-height: 1.6;">
-											<li style="margin-bottom: 0.8em;">Cultivating collective inquiry and exploration</li>
-											<li style="margin-bottom: 0.8em;">Inspiring creative approaches to knowledge and discovery</li>
-											<li>Bridging science, philosophy, and technology for a more thoughtful future</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</header>
-					</section>
+	<!-- Footer -->
+	<footer id="footer" class="footer-spread" style="background: #fff; border-top: 1px solid #e0e0e0; padding: 1em 0 0.7em 0;">
+		<div class="inner footer-flex" style="max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: stretch; gap: 3em; min-height: 160px;">
+			<form method="post" action="#" style="flex: 1 1 340px; min-width: 220px; max-width: 400px; text-align: left; margin: 0;">
+				<div style="margin-bottom: 0.7em; font-weight: 600; color: #23253a; font-size: 1em;">Sign up for our mailing list!</div>
+				<div class="field" style="margin-bottom: 0.5em;">
+					<label for="name" style="color: #23253a; font-size: 0.93em;">Name</label>
+					<input type="text" name="name" id="name" style="font-size: 0.93em; padding: 0.25em; border: 1.5px solid #23253a; border-radius: 3px; width: 100%;" />
+				</div>
+				<div class="field" style="margin-bottom: 0.5em;">
+					<label for="email" style="color: #23253a; font-size: 0.93em;">Email</label>
+					<input type="email" name="email" id="email" style="font-size: 0.93em; padding: 0.25em; border: 1.5px solid #23253a; border-radius: 3px; width: 100%;" />
+				</div>
+				<ul class="actions" style="margin-top: 0.2em;">
+					<li><input type="submit" value="Sign Up" style="font-size: 0.93em; padding: 0.2em 1em;" /></li>
+				</ul>
+			</form>
+			<div style="flex: 1 1 340px; min-width: 220px; max-width: 400px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-size: 0.93em;">
+				<div class="contact" style="margin-bottom: 0.5em;">
+					<div style="font-weight: 600; color: #23253a; margin-bottom: 0.2em;">Critical Explorations Initiative</div>
+					<div class="icon solid fa-envelope"><a href="#" style="color: #1a237e;">info@criticalexplorations.org</a></div>
+				</div>
+				<div class="copyright" style="font-size: 0.9em; color: #23253a; margin-top: 0.5em;">
+					&copy; Critical Explorations Initiative. All rights reserved.
+				</div>
+			</div>
+		</div>
+	</footer>
+</div>
 
-<footer id="footer" class="footer-spread" style="background: #fff; border-top: 1px solid #e0e0e0; padding: 1em 0 0.7em 0;">
-  <div class="inner footer-flex" style="max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: stretch; gap: 3em; min-height: 160px;">
-    <form method="post" action="#" style="flex: 1 1 340px; min-width: 220px; max-width: 400px; text-align: left; margin: 0;">
-      <div style="margin-bottom: 0.7em; font-weight: 600; color: #23253a; font-size: 1em;">Sign up for our mailing list!</div>
-      <div class="field" style="margin-bottom: 0.5em;">
-        <label for="name" style="color: #23253a; font-size: 0.93em;">Name</label>
-        <input type="text" name="name" id="name" style="font-size: 0.93em; padding: 0.25em; border: 1.5px solid #23253a; border-radius: 3px; width: 100%;" />
-      </div>
-      <div class="field" style="margin-bottom: 0.5em;">
-        <label for="email" style="color: #23253a; font-size: 0.93em;">Email</label>
-        <input type="email" name="email" id="email" style="font-size: 0.93em; padding: 0.25em; border: 1.5px solid #23253a; border-radius: 3px; width: 100%;" />
-      </div>
-      <ul class="actions" style="margin-top: 0.2em;">
-        <li><input type="submit" value="Sign Up" style="font-size: 0.93em; padding: 0.2em 1em;" /></li>
-      </ul>
-    </form>
-    <div style="flex: 1 1 340px; min-width: 220px; max-width: 400px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-size: 0.93em;">
-      <div class="contact" style="margin-bottom: 0.5em;">
-        <div style="font-weight: 600; color: #23253a; margin-bottom: 0.2em;">Critical Explorations Initiative</div>
-        <div class="icon solid fa-envelope"><a href="#" style="color: #1a237e;">info@criticalexplorations.org</a></div>
-      </div>
-      <div class="copyright" style="font-size: 0.9em; color: #23253a; margin-top: 0.5em;">
-        &copy; Critical Explorations Initiative. All rights reserved.
-      </div>
-    </div>
-  </div>
-</footer>
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/header-loader.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+	const observerOptions = {
+		threshold: 0.1,
+		rootMargin: '0px 0px -50px 0px'
+	};
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('visible');
+			}
+		});
+	}, observerOptions);
+	document.addEventListener('DOMContentLoaded', () => {
+		const animatedElements = document.querySelectorAll('.animate-on-scroll');
+		animatedElements.forEach(el => observer.observe(el));
+	});
+</script>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/header-loader.js"></script>
-			<script src="assets/js/main.js"></script>
-		<script>
-			// Scroll animation observer
-			const observerOptions = {
-				threshold: 0.1,
-				rootMargin: '0px 0px -50px 0px'
-			};
-
-			const observer = new IntersectionObserver((entries) => {
-				entries.forEach(entry => {
-					if (entry.isIntersecting) {
-						entry.target.classList.add('visible');
-					}
-				});
-			}, observerOptions);
-
-			// Observe all elements with animate-on-scroll class
-			document.addEventListener('DOMContentLoaded', () => {
-				const animatedElements = document.querySelectorAll('.animate-on-scroll');
-				animatedElements.forEach(el => observer.observe(el));
-			});
-		</script>
-	</body>
+</body>
 </html>

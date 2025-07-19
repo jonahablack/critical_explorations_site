@@ -5,50 +5,62 @@
   <title>Reading List | Critical Explorations Initiative</title>
   <link rel="stylesheet" href="assets/css/main.css">
   <style>
-    .reading-list-grid {
+    .reading-list-controls {
       display: flex;
-      flex-wrap: wrap;
-      gap: 2em;
       justify-content: center;
+      margin-bottom: 2em;
+    }
+    .reading-list-dropdown {
+      font-size: 1.1em;
+      padding: 0.5em 1.2em;
+      border-radius: 8px;
+      border: 1px solid #bbb;
+      background: #f8f8fa;
+      color: #23253a;
+      margin-left: 0.5em;
+    }
+    .reading-list-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 1.2em;
+      justify-items: stretch;
       margin-top: 2em;
     }
     .reading-list-card {
-      background: rgba(255,255,255,0.97);
-      border-radius: 14px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
-      padding: 2em 1.5em 1.5em 1.5em;
-      width: 220px;
-      min-height: 180px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      padding: 1em 0.7em 0.7em 0.7em;
+      min-height: 120px;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      text-align: center;
+      align-items: flex-start;
+      text-align: left;
+      font-size: 0.98em;
+      transition: transform 0.15s, box-shadow 0.15s;
       cursor: pointer;
-      transition: transform 0.18s cubic-bezier(.4,2,.6,1), box-shadow 0.18s;
       opacity: 0;
-      transform: translateY(40px);
+      transform: translateY(30px);
       animation: fadeInUpCard 0.7s forwards;
     }
     .reading-list-card:hover {
-      transform: translateY(-4px) scale(1.03);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.13);
     }
-    .reading-list-card .icon {
-      font-size: 2.2em;
-      margin-bottom: 0.5em;
-      color: #4c5c96;
-    }
-    .reading-list-card h3 {
-      color: #23253a;
-      font-size: 1.15em;
+    .reading-list-card .book-title {
       font-weight: 700;
-      margin-bottom: 0.3em;
-      margin-top: 0;
+      color: #23253a;
+      margin-bottom: 0.2em;
+      font-size: 1em;
     }
-    .reading-list-card p {
+    .reading-list-card .book-author {
+      color: #4c5c96;
+      font-size: 0.95em;
+      margin-bottom: 0.3em;
+    }
+    .reading-list-card .book-desc {
       color: #444;
-      font-size: 0.98em;
-      margin: 0;
+      font-size: 0.93em;
     }
     @keyframes fadeInUpCard {
       to {
@@ -56,55 +68,138 @@
         transform: translateY(0);
       }
     }
-    .reading-list-card:nth-child(1) { animation-delay: 0.1s; }
-    .reading-list-card:nth-child(2) { animation-delay: 0.22s; }
-    .reading-list-card:nth-child(3) { animation-delay: 0.34s; }
-    .reading-list-card:nth-child(4) { animation-delay: 0.46s; }
-    .reading-list-card:nth-child(5) { animation-delay: 0.58s; }
-    .reading-list-card:nth-child(6) { animation-delay: 0.7s; }
+    @media (max-width: 1200px) {
+      .reading-list-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    @media (max-width: 900px) {
+      .reading-list-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .reading-list-grid { grid-template-columns: 1fr; }
+    }
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
   <div id="site-header"></div>
-  <section style="max-width: 900px; margin: 3em auto 4em auto; background: rgba(255,255,255,0.93); border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); padding: 2.5em;">
+  <section style="max-width: 1400px; margin: 3em auto 4em auto; background: none; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); padding: 2.5em;">
     <h2 style="text-align: center; color: #23253a; font-size: 2em; font-weight: 700; margin-bottom: 1.5em;">Reading List</h2>
-    <div class="reading-list-grid">
-      <a class="reading-list-card" href="reading-list/philosophy-of-mind/philosophy-of-mind.html">
-        <span class="icon"><i class="fa-solid fa-brain"></i></span>
-        <h3>Philosophy of Mind</h3>
-        <p>Dive into consciousness, cognition, and the nature of mind.</p>
-      </a>
-      <a class="reading-list-card" href="reading-list/ai-technical/ai-technical.html">
-        <span class="icon"><i class="fa-solid fa-robot"></i></span>
-        <h3>AI: Technical</h3>
-        <p>Learn about algorithms, machine learning, and the science of AI.</p>
-      </a>
-      <a class="reading-list-card" href="reading-list/ai-governance/ai-governance.html">
-        <span class="icon"><i class="fa-solid fa-scale-balanced"></i></span>
-        <h3>AI: Governance & Ethics</h3>
-        <p>Read about AI safety, policy, and the societal impact of AI.</p>
-      </a>
-      <a class="reading-list-card" href="reading-list/creativity/creativity.html">
-        <span class="icon"><i class="fa-solid fa-palette"></i></span>
-        <h3>Creativity</h3>
-        <p>Discover the science and practice of creativity and innovation.</p>
-      </a>
-      <a class="reading-list-card" href="reading-list/ethics-society/ethics-society.html">
-        <span class="icon"><i class="fa-solid fa-handshake-angle"></i></span>
-        <h3>Digital Ethics & Society</h3>
-        <p>Explore how digital technology intersects with morality, justice, and the future of humanity.</p>
-      </a>
-      <a class="reading-list-card" href="reading-list/science-technology/science-technology.html">
-        <span class="icon"><i class="fa-solid fa-flask-vial"></i></span>
-        <h3>Science & Technology</h3>
-        <p>Investigate scientific/philosophical revolutions and their discovery paradigms.</p>
-      </a>
+    <div class="reading-list-controls">
+      <label for="topic-select" style="font-weight:600; color:#23253a;">Filter by topic:</label>
+      <select id="topic-select" class="reading-list-dropdown">
+        <option value="all">All Topics</option>
+        <option value="Intelligence: Natural and Artificial">Intelligence: Natural and Artificial</option>
+        <option value="Ethics and Governance in a Digital World">Ethics and Governance in a Digital World</option>
+        <option value="Foundations of Knowledge and Inquiry">Foundations of Knowledge and Inquiry</option>
+        <option value="Scientific Paradigms and Conceptual Change">Scientific Paradigms and Conceptual Change</option>
+        <option value="Human Character and the Good Life">Human Character and the Good Life</option>
+        <option value="Systems, Society, and Power">Systems, Society, and Power</option>
+      </select>      
     </div>
-    <p style="margin-top:2em; font-size:1em; color:#444; text-align:center;">Click a subject to explore readings by difficulty level.</p>
+    <div class="reading-list-grid" id="reading-list-grid">
+      <!-- Book cards will be injected here by JS -->
+    </div>
+    <p style="margin-top:2em; font-size:1em; color:#444; text-align:center;">Use the dropdown to filter by topic.</p>
   </section>
   <div id="site-footer"></div>
   <script src="assets/js/header-loader.js"></script>
+  <script>
+    // All book data (topic, title, author, description)
+  const books = [
+    // Intelligence: Natural and Artificial
+    { topic: "Intelligence: Natural and Artificial", title: "Deep Learning", author: "Ian Goodfellow, Yoshua Bengio, & Aaron Courville", desc: "The definitive textbook on deep learning, covering theory and practical applications." },
+    { topic: "Intelligence: Natural and Artificial", title: "Reinforcement Learning: An Introduction", author: "Richard Sutton & Andrew Barto", desc: "The classic introduction to reinforcement learning, from foundational concepts to advanced topics." },
+    { topic: "Intelligence: Natural and Artificial", title: "Artificial Intelligence: A Modern Approach", author: "Stuart Russell & Peter Norvig", desc: "The standard comprehensive textbook for advanced AI students and practitioners." },
+    { topic: "Intelligence: Natural and Artificial", title: "Probabilistic Graphical Models: Principles and Techniques", author: "Daphne Koller & Nir Friedman", desc: "A deep dive into graphical models and their applications in AI." },
+    { topic: "Intelligence: Natural and Artificial", title: "Information Theory, Inference, and Learning Algorithms", author: "David MacKay", desc: "A mathematically rich text connecting information theory and machine learning." },
+    { topic: "Intelligence: Natural and Artificial", title: "The Alignment Problem", author: "Brian Christian", desc: "A narrative-driven exploration of how researchers are trying to align machine learning systems with human values." },
+    { topic: "Intelligence: Natural and Artificial", title: "Human Compatible", author: "Stuart Russell", desc: "A leading AI researcher proposes a new approach to building provably beneficial AI systems." },
+    { topic: "Intelligence: Natural and Artificial", title: "Gödel, Escher, Bach", author: "Douglas Hofstadter", desc: "A profound and playful exploration of self-reference, cognition, and formal systems." },
+
+    // Ethics and Governance in a Digital World
+    { topic: "Ethics and Governance in a Digital World", title: "Life 3.0: Being Human in the Age of Artificial Intelligence", author: "Max Tegmark", desc: "A broad look at the future of AI and its impact on society." },
+    { topic: "Ethics and Governance in a Digital World", title: "Superintelligence: Paths, Dangers, Strategies", author: "Nick Bostrom", desc: "A contemporary work on the future of AI and the risks of advanced intelligence." },
+    { topic: "Ethics and Governance in a Digital World", title: "Tools and Weapons", author: "Brad Smith & Carol Ann Browne", desc: "A look at the ethical and societal challenges posed by new technologies." },
+    { topic: "Ethics and Governance in a Digital World", title: "Ethics of Artificial Intelligence and Robotics", author: "Stanford Encyclopedia of Philosophy (online)", desc: "A comprehensive overview of the ethical issues in AI and robotics." },
+    { topic: "Ethics and Governance in a Digital World", title: "The Ethics of Invention", author: "Sheila Jasanoff", desc: "Explores the co-evolution of science, technology, and law in shaping ethical life." },
+    { topic: "Ethics and Governance in a Digital World", title: "Atlas of AI", author: "Kate Crawford", desc: "A critical mapping of the global systems of labor, data, and politics behind artificial intelligence." },
+    { topic: "Ethics and Governance in a Digital World", title: "Race After Technology", author: "Ruha Benjamin", desc: "Investigates how automation can encode and amplify racial inequality." },
+    { topic: "Ethics and Governance in a Digital World", title: "The Future and Its Enemies", author: "Virginia Postrel", desc: "A libertarian argument in favor of dynamism, technological progress, and decentralized social evolution—against technocratic stasis and control." },
+    { topic: "Ethics and Governance in a Digital World", title: "Surveillance Capitalism", author: "Shoshana Zuboff", desc: "Explores how tech firms extract value from personal data and the consequences for autonomy and democracy." },
+    { topic: "Ethics and Governance in a Digital World", title: "The Anxious Generation", author: "Jonathan Haidt", desc: "A contemporary analysis of the impact of smartphones and social media on youth mental health and society." },
+    { topic: "Ethics and Governance in a Digital World", title: "Technopoly", author: "Neil Postman", desc: "Critiques the unchecked dominance of technology over culture and thought." },
+    { topic: "Ethics and Governance in a Digital World", title: "Amusing Ourselves to Death", author: "Neil Postman", desc: "An early but prescient critique of how media technology shapes public discourse and thought." },
+    { topic: "Ethics and Governance in a Digital World", title: "Weapons of Math Destruction", author: "Cathy O’Neil", desc: "How big data and algorithms can reinforce inequality and threaten democracy." },
+
+    // Foundations of Knowledge and Inquiry
+    { topic: "Foundations of Knowledge and Inquiry", title: "Tractatus Logico-Philosophicus", author: "Ludwig Wittgenstein", desc: "A seminal work in analytic philosophy on logic, language, and the limits of thought." },
+    { topic: "Foundations of Knowledge and Inquiry", title: "Critique of Pure Reason", author: "Immanuel Kant", desc: "A monumental work in philosophy, examining the limits and scope of human understanding." },
+    { topic: "Foundations of Knowledge and Inquiry", title: "Meditations on First Philosophy", author: "René Descartes", desc: "A classic work introducing radical doubt and the foundations of modern philosophy." },
+    { topic: "Foundations of Knowledge and Inquiry", title: "How to Do Things with Words", author: "J.L. Austin", desc: "A foundational text in ordinary language philosophy and speech act theory." },
+    { topic: "Foundations of Knowledge and Inquiry", title: "The Master and His Emissary", author: "Iain McGilchrist", desc: "Explores how the brain’s hemispheric differences shape culture, knowledge, and rationality." },
+    { topic: "Foundations of Knowledge and Inquiry", title: "Lectures on Kant’s Political Philosophy", author: "Hannah Arendt", desc: "Arendt’s posthumously published reflection on Kant’s Critique of Judgment, exploring how political judgment, taste, and public reasoning are rooted in shared sensibility." },
+
+    // Scientific Paradigms and Conceptual Change
+    { topic: "Scientific Paradigms and Conceptual Change", title: "The Structure of Scientific Revolutions", author: "Thomas Kuhn", desc: "Kuhn's classic work on paradigm shifts and the creative process in science." },
+    { topic: "Scientific Paradigms and Conceptual Change", title: "Conceptual Revolutions", author: "Paul Thagard", desc: "A major work on how scientific and philosophical revolutions transform our understanding of creativity, science, and technology." },
+    { topic: "Scientific Paradigms and Conceptual Change", title: "Science in Action", author: "Bruno Latour", desc: "Challenges traditional views of science by showing how facts are socially constructed." },
+    { topic: "Scientific Paradigms and Conceptual Change", title: "The Act of Creation", author: "Arthur Koestler", desc: "A cross-disciplinary exploration of creativity in art, science, and humor." },
+    { topic: "Scientific Paradigms and Conceptual Change", title: "Creativity: Flow and the Psychology of Discovery and Invention", author: "Mihaly Csikszentmihalyi", desc: "A psychological exploration of how creative individuals work and think." },
+    { topic: "Scientific Paradigms and Conceptual Change", title: "The 100 Greatest Scientific Discoveries of All Time", author: "Kendall Haven", desc: "A survey of the most important scientific discoveries and their impact on creativity and progress." },
+    { topic: "Scientific Paradigms and Conceptual Change", title: "The Creative Mind: Myths and Mechanisms", author: "Margaret Boden", desc: "Boden's influential exploration of the nature of creativity in humans and machines." },
+
+
+    // Human Character and the Good Life
+    { topic: "Human Character and the Good Life", title: "The Republic", author: "Plato", desc: "A foundational text in Western philosophy, exploring justice, education, and the soul’s role in a well-ordered life." },
+    { topic: "Human Character and the Good Life", title: "Nicomachean Ethics", author: "Aristotle", desc: "Aristotle's influential treatise on virtue, happiness, and what it means to live well." },
+    { topic: "Human Character and the Good Life", title: "The Enchiridion", author: "Epictetus", desc: "A compact guide to traditional Stoic ethics, with emphasis on personal responsibility, resilience, and 'the life in accord.'" },
+    { topic: "Human Character and the Good Life", title: "The Human Condition", author: "Hannah Arendt", desc: "Arendt’s analysis of labor, work, and action as key modes of human activity in the modern world." },
+    { topic: "Human Character and the Good Life", title: "Man’s Search for Meaning", author: "Viktor E. Frankl", desc: "A moving reflection on survival, purpose, and logotherapy drawn from experiences in concentration camps." },
+    { topic: "Human Character and the Good Life", title: "The Ethics of Authenticity", author: "Charles Taylor", desc: "A critical but sympathetic look at modern individualism and how to rescue meaning and depth in moral life." },
+    { topic: "Human Character and the Good Life", title: "The Interpretation of Dreams", author: "Sigmund Freud", desc: "Freud’s foundational work in psychoanalysis, shaping how we understand desire, the unconscious, and personal development." },
+    { topic: "Human Character and the Good Life", title: "Existentialism is a Humanism", author: "Jean-Paul Sartre", desc: "Sartre’s concise defense of existentialist ethics and the radical responsibility of choosing one’s path." },
+
+    // Systems, Society, and Power
+    { topic: "Systems, Society, and Power", title: "Capital", author: "Karl Marx", desc: "A critical analysis of political economy and capitalism, foundational in social science." },
+    { topic: "Systems, Society, and Power", title: "The Constitution of Liberty", author: "F.A. Hayek", desc: "A defense of classical liberalism, exploring how individual freedom and spontaneous order form the basis of a just society." },
+    { topic: "Systems, Society, and Power", title: "The Protestant Ethic and the Spirit of Capitalism", author: "Max Weber", desc: "A classic in sociology, exploring the relationship between religion and economic behavior." },
+    { topic: "Systems, Society, and Power", title: "Democracy in America, Vol. 1", author: "Alexis de Tocqueville", desc: "A seminal analysis of American society, democracy, and political culture." },
+    { topic: "Systems, Society, and Power", title: "Democracy in America, Vol. 2", author: "Alexis de Tocqueville", desc: "The continuation of Tocqueville's foundational study of democracy and its effects on society." },
+    { topic: "Systems, Society, and Power", title: "Seeing Like a State", author: "James C. Scott", desc: "Analyzes how modern states impose simplified, often flawed models on complex societies." },
+    { topic: "Systems, Society, and Power", title: "Discipline and Punish", author: "Michel Foucault", desc: "A major work on the history of punishment, surveillance, and social control." },
+    { topic: "Systems, Society, and Power", title: "Violence and the Sacred", author: "René Girard", desc: "Girard's influential exploration of the role of violence and the sacred in human culture and religion." },
+    { topic: "Systems, Society, and Power", title: "Things Hidden Since the Foundation of the World", author: "René Girard", desc: "A major work on mimetic theory, violence, and the origins of culture and religion." },
+    { topic: "Systems, Society, and Power", title: "Anthropic Bias", author: "Nick Bostrom", desc: "A foundational work on observation selection effects and their implications for science and philosophy." },
+    { topic: "Systems, Society, and Power", title: "Anarchy, State, and Utopia", author: "Robert Nozick", desc: "A foundational libertarian critique of redistributive justice, offering a defense of minimal state principles in contrast to Rawls and Marx." },
+    { topic: "Systems, Society, and Power", title: "The Death and Life of Great American Cities", author: "Jane Jacobs", desc: "A landmark critique of modern urban planning that defends bottom-up social order and the subtle intelligence of everyday life." },
+    { topic: "Systems, Society, and Power", title: "The Need for Roots", author: "Simone Weil", desc: "A spiritually and politically urgent vision for rebuilding society on foundations of attention, responsibility, and belonging." },
+    { topic: "Systems, Society, and Power", title: "A Theory of Justice", author: "John Rawls", desc: "A foundational work in modern political philosophy, proposing principles of justice as fairness and a rational framework for societal structure." },
+    { topic: "Systems, Society, and Power", title: "After Virtue", author: "Alasdair MacIntyre", desc: "A powerful critique of modern moral philosophy and a call to recover the Aristotelian tradition of virtue and communal life." },
+
+  ];
+
+
+    function renderBooks(topic) {
+      const grid = document.getElementById('reading-list-grid');
+      grid.innerHTML = '';
+      const filtered = topic === 'all' ? books : books.filter(b => b.topic === topic);
+      filtered.forEach(book => {
+        const card = document.createElement('div');
+        card.className = 'reading-list-card';
+        card.innerHTML = `
+          <div class="book-title">${book.title}</div>
+          <div class="book-author">${book.author}</div>
+          <div class="book-desc">${book.desc}</div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+    document.getElementById('topic-select').addEventListener('change', function() {
+      renderBooks(this.value);
+    });
+    // Initial render
+    renderBooks('all');
+  </script>
   <script src="assets/js/main.js"></script>
 </body>
 </html> 
