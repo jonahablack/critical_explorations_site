@@ -94,12 +94,15 @@
       .reading-list-grid {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 1em;
-        max-width: 98vw;
+        /* max-width: 100vw; /* or remove max-width entirely */
+        padding-left: 0.5em;
+        padding-right: 0.5em;
       }
       .reading-list-card {
         min-width: 0;
         max-width: 100vw;
         font-size: 1em;
+        box-sizing: border-box;
       }
     }
   </style>
@@ -187,11 +190,11 @@
     { topic: "Human Character and the Good Life", title: "Existentialism is a Humanism", author: "Jean-Paul Sartre", desc: "Sartre’s concise defense of existentialist ethics and the radical responsibility of choosing one’s path." },
 
     // Systems, Society, and Power
-    { topic: "Systems, Society, and Power", title: "Capital", author: "Karl Marx", desc: "A critical analysis of political economy and capitalism, foundational in social science." },
     { topic: "Systems, Society, and Power", title: "The Constitution of Liberty", author: "F.A. Hayek", desc: "A defense of classical liberalism, exploring how individual freedom and spontaneous order form the basis of a just society." },
     { topic: "Systems, Society, and Power", title: "The Protestant Ethic and the Spirit of Capitalism", author: "Max Weber", desc: "A classic in sociology, exploring the relationship between religion and economic behavior." },
     { topic: "Systems, Society, and Power", title: "Democracy in America, Vol. 1", author: "Alexis de Tocqueville", desc: "A seminal analysis of American society, democracy, and political culture." },
     { topic: "Systems, Society, and Power", title: "Democracy in America, Vol. 2", author: "Alexis de Tocqueville", desc: "The continuation of Tocqueville's foundational study of democracy and its effects on society." },
+    { topic: "Systems, Society, and Power", title: "Capital", author: "Karl Marx", desc: "A critical analysis of political economy and capitalism, foundational in social science." },
     { topic: "Systems, Society, and Power", title: "Seeing Like a State", author: "James C. Scott", desc: "Analyzes how modern states impose simplified, often flawed models on complex societies." },
     { topic: "Systems, Society, and Power", title: "Discipline and Punish", author: "Michel Foucault", desc: "A major work on the history of punishment, surveillance, and social control." },
     { topic: "Systems, Society, and Power", title: "Violence and the Sacred", author: "René Girard", desc: "Girard's influential exploration of the role of violence and the sacred in human culture and religion." },

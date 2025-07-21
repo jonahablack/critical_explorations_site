@@ -3823,7 +3823,7 @@ a:hover, a:active {
 	--header-min: 80px;
 	--header-max: 160px;
 	--header-vh: 10vh;
-	/* exactly matches your header’s height */
+	/* exactly matches your header's height */
 	--header-height: clamp(var(--header-min), var(--header-vh), var(--header-max));
   }
   
@@ -3854,7 +3854,7 @@ a:hover, a:active {
 	box-sizing: border-box;
   }
   
-  /* Remove the old “body > *” margin hack */
+  /* Remove the old "body > *" margin hack */
   body > *:not(header#header) {
 	margin-top: 0 !important;
   }
@@ -3872,6 +3872,14 @@ a:hover, a:active {
 	font-family: "Playfair Display", serif;
 	/* optionally pick a weight: */
 	font-weight: 600;
+  }
+  
+  @media screen and (max-width: 800px) {
+    body {
+      background-attachment: scroll !important;
+      background-size: cover !important;
+      background-position: center !important;
+    }
   }
   
   
