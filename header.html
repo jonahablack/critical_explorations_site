@@ -1,27 +1,35 @@
 <header id="header" class="alt">
   <div class="logo">
     <a href="index.html">
-      <img src="images/logo.png" alt="Critical Explorations Initiative Logo" />
-      <span class="brand">
-        <span>Critical</span>
-        <span>Explorations</span>
-        <span>Initiative</span>
-      </span>
+      <img src="images/logo_words.png" alt="Critical Explorations Initiative" />
     </a>
   </div>
 
   <nav class="desktop-nav">
-    <ul class="main-nav" style="display: flex; align-items: center; gap: 2em; list-style: none; margin: 0; padding: 0;">
+    <ul class="main-nav" 
+        style="display: flex; align-items: center; gap: 2em; list-style: none;">
       <li class="dropdown" style="position: relative;">
         <a class="menu-education" style="cursor: pointer; color: #23253a; font-weight: 600; font-size: 1em; text-decoration: none;">Education <span class="arrow" style="font-size: 1em;">&#9662;</span></a>
-        <ul class="submenu" style="position: absolute; left: 0; top: 100%; background: #fff; min-width: 180px; display: none; box-shadow: 0 8px 16px rgba(0,0,0,0.15); border-radius: 0 0 5px 5px; padding: 0.5em 0; z-index: 10001;">
-          <li><a href="past-workshops.html">Past Workshops</a></li>
-          <li><a href="upcoming-workshops.html">Upcoming Workshops</a></li>
-          <li><a href="reading-list.html">Reading List</a></li>
+        <ul class="submenu"
+            style="position: fixed;
+                  background: #fff;
+                  min-width: 210px;
+                  display: none;
+                  box-shadow: 0 12px 32px rgba(0,0,0,0.16);
+                  border-radius: 0 0 14px 14px;
+                  padding: 1.1em 0.2em 1.1em 0.2em;
+                  z-index: 30000;">
+          <style>
+            .submenu a { white-space: nowrap; }
+            .submenu a:hover { background: #f3f3f6 !important; }
+          </style>
+          <li><a href="past-workshops.html" style="color: #23253a; padding: 0.8em 2em; display: block; text-decoration: none; font-size: 1.13em; letter-spacing: 0.03em; white-space: nowrap;">Past Workshops</a></li>
+          <li><a href="upcoming-workshops.html" style="color: #23253a; padding: 0.8em 2em; display: block; text-decoration: none; font-size: 1.13em; letter-spacing: 0.03em; white-space: nowrap;">Upcoming Workshops</a></li>
+          <li><a href="reading-list.html" style="color: #23253a; padding: 0.8em 2em; display: block; text-decoration: none; font-size: 1.13em; letter-spacing: 0.03em; white-space: nowrap;">Reading List</a></li>
         </ul>
       </li>
       <li><a href="research.html">Research</a></li>
-      <li><a href="newsletter.html">Newsletter</a></li>
+      <li><a href="https://substack.com/" target="_blank" rel="noopener">Newsletter</a></li>
       <li><a href="about.html">About</a></li>
     </ul>
   </nav>
@@ -39,7 +47,7 @@
       <li><a href="upcoming-workshops.html">Upcoming Workshops</a></li>
       <li><a href="reading-list.html">Reading List</a></li>
       <li><a href="research.html">Research</a></li>
-      <li><a href="newsletter.html">Newsletter</a></li>
+      <li><a href="https://substack.com/" target="_blank" rel="noopener">Newsletter</a></li>
       <li><a href="about.html">About</a></li>
     </ul>
   </div>
@@ -48,34 +56,13 @@
     /* 1. Container */
     #header.alt {
       display: flex;
-      align-items: center;      /* vertical centering */
+      align-items: center !important;      /* vertical centering */
       justify-content: space-between;
+      /* padding-left: clamp(1.5rem, 6vw, 4rem) !important; */
+      /* padding-right: clamp(1.5rem, 6vw, 4rem) !important; */
+      padding-top: clamp(2.5rem, 4vw, 2rem) !important;
+      padding-bottom: clamp(2.5rem, 4vw, 2rem) !important;
     }
-    /* 1. Ensure the dropdown container is the positioning context */
-.dropdown {
-  position: relative;   /* you already have this inline, so you’re good */
-}
-
-/* 2. Show the submenu on hover */
-.dropdown:hover .submenu {
-  right: auto !important;
-  left: 0 !important;
-}
-
-/* 3. Anchor styles inside the submenu */
-.submenu li a {
-  display: block;              /* full-width clickable area */
-  padding: 0.5em 1.5em;        /* your desired vertical & horizontal padding */
-  color: #23253a;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-/* 4. Hover background for submenu items */
-.submenu li a:hover {
-  background: #f3f3f6;
-}
-
 
     /* 2. Logo */
     .logo a {
@@ -84,7 +71,7 @@
       text-decoration: none;
     }
     .logo img {
-      height: clamp(48px,6vw,96px);
+      height: clamp(200px,20vw,100px);
       width: auto;
     }
     .brand {
@@ -164,12 +151,12 @@
     }
 
     /* Show hamburger only under 800px */
-    @media(max-width:800px) {
+    @media(max-width:870px) {
       .desktop-nav { display:none; }
       .hamburger    { display:flex; }
     }
 
-    @media (min-width: 801px) {
+    @media (min-width: 871px) {
       #hamburger-menu {
         display: none !important;
       }

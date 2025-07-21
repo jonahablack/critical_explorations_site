@@ -1,25 +1,29 @@
-/* responsive.css */
-
-/* 1. Global container width and breathing room */
+/* 1. Define your “page” container limits & gutters */
 :root {
-    --page-max: 1200px;                /* never wider than this   */
-    --page-pad: clamp(1rem,4vw,3rem);  /* fluid side-margins      */
-  }
-  
-  .page-inner {
-    width: min(100% - 2*var(--page-pad), var(--page-max));
-    margin-inline: auto;
-    padding-inline: var(--page-pad);
-  }
-  
-  /* 2. Fluid typography helpers */
-  h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
-  h2 { font-size: clamp(1.5rem, 3.5vw, 2.1rem); }
-  p, li { font-size: clamp(1rem, 2.3vw, 1.15rem); line-height: 1.6; }
-  
-  /* 3. Media that should never overflow */
-  img, video, iframe { max-width: 100%; height: auto; }
-  
-  /* 4. Section padding keeps rhythm across break-points */
-  section, header:not(#header) { padding-block: clamp(2rem, 6vw, 4rem); }
+  --page-max-width: 1200px;
+  --page-gutter: clamp(1rem, 4vw, 3rem);
+}
+
+/* 2. Wrap all main content in a centered, responsive container */
+#page-wrapper,
+.page-inner,
+.inner {
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding-inline: var(--page-gutter);
+  box-sizing: border-box;
+}
+
+/* 3. Give your <section> blocks vertical breathing room */
+#banner,
+#wrapper,
+section {
+  padding-block: var(--page-gutter);
+}
+
+/* 4. Footer spacing */
+footer {
+  padding-block: var(--page-gutter);
+}
+
   

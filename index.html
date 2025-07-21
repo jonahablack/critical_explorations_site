@@ -1,15 +1,17 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+
 	<title>Critical Explorations Initiative</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	<link rel="icon" type="image/png" href="images/logo.png" />
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+	
 	<style>
 		@keyframes fadeInUpBox {
 			from {
@@ -21,12 +23,15 @@
 				transform: translateY(0);
 			}
 		}
+		.thumbnail {
+			height: auto !important; /* or whatever range you want */
+			width: auto;                      /* maintain aspect ratio */
+			max-width: 100%;                  /* don't overflow container */
+			display: fixed;
+		}
 		.apply-animate-in {
 			opacity: 0;
 			animation: fadeInUpBox 1s cubic-bezier(0.23, 1, 0.32, 1) .8s forwards;
-		}
-		h2, h3 {
-			font-family: 'Merriweather', serif;
 		}
 		@media (max-width: 768px) {
 			.mission-block {
@@ -36,6 +41,18 @@
 		.pillars-block ul li {
 			transition: all 0.2s ease;
 		}
+		p, li {
+			font-family: 'Source Sans Pro', sans-serif !important;
+			font-size: 1.08em;
+			font-weight: 400;
+			color: #23253a;
+		}
+		.pillar-num {
+			color: #4c5c96; /* or any color you like */
+			font-weight: 700;
+			margin-right: 0.4em;
+		}
+
 	</style>
 </head>
 <body class="is-preload">
@@ -49,7 +66,7 @@
 	<!-- Banner -->
 	<section id="banner">
 		<div class="page-inner">
-			<p class="banner-lead animate-fade-in">Exploring new frontiers in the age of AI</p>
+			<h1 class="banner-lead animate-fade-in">Exploring new frontiers in the age of AI</h1>
 			<div class="apply-animate-in" style="display: flex; flex-direction: column; align-items: center; margin: 0 auto 1.5em auto; max-width: 520px; background: #23253a; border-radius: 8px; padding: 1.2em 1.5em;">
 				<div style="font-size: 1.08em; color: #fff; line-height: 1.6; margin-bottom: 0.8em; text-align: left; width: 100%;">
 					Our first series of in-person workshops will be announced soon. <br><br>
@@ -67,19 +84,19 @@
 			<div class="page-inner">
 				<h2 style="font-size: 1.8em; color: #23253a; margin-bottom: 1.2em; font-weight: 700; text-align: center;">About the Initiative</h2>
 				<div style="display: flex; flex-wrap: wrap; gap: 3em; justify-content: center; align-items: flex-start; margin-top: 2em;">
-					<div class="mission-block animate-on-scroll" style="flex: 1 1 320px; min-width: 260px; max-width: 420px; text-align: left; background: #fdfdfd; padding: 2em; border-radius: 8px; border-left: 4px solid #4c5c96; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
-						<h3 style="font-size: 1.3em; color: #23253a; margin-bottom: 0.8em; font-weight: 700;">Mission</h3>
+					<div class="mission-block animate-on-scroll" style="flex: 1 1 320px; min-width: 260px; max-width: 420px; text-align: left; background: rgba(255, 255, 255, 0.9); padding: 2em; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+						<h2 style="font-size: 1.3em; color: #23253a; margin-bottom: 0.8em; font-weight: 700;">Mission</h2>
 						<p style="font-size: 1.1em; color: #23253a; margin-bottom: 0; line-height: 1.6;">
 							The Critical Explorations Initiative supports a new generation of thinkers working at the intersections of philosophy, mathematics, and empirical science. We champion foundational inquiry in an age shaped by advanced AI, rapid innovation, and conceptual upheaval.
 						</p>
 					</div>									  
 					<div class="pillars-block animate-on-scroll" style="flex: 1 1 320px; min-width: 260px; max-width: 420px; text-align: left; background: rgba(255, 255, 255, 0.9); padding: 2em; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
-						<h3 style="font-size: 1.3em; color: #23253a; margin-bottom: 0.8em; font-weight: 700;">Core Pillars</h3>
-						<ul class="pillars-list" style="list-style: disc outside; padding-left: 1.5em; color: #23253a; font-size: 1.05em; margin: 0; line-height: 1.6;">
-							<li style="margin-bottom: 0.8em;">Grounding inquiry in foundational ideas across philosophy, mathematics, and the sciences</li>
-							<li style="margin-bottom: 0.8em;">Exploring the ethical, conceptual, and societal implications of advanced technologies</li>
-							<li>Fostering creative, collaborative exploration across disciplines and generations</li>
-						</ul>
+						<h2 style="font-size: 1.3em; color: #23253a; margin-bottom: 0.8em; font-weight: 700;">Core Pillars</h2>
+						<div class="pillars-list" style="color: #23253a; font-size: 1.05em; margin: 0; line-height: 1.6;">
+							<p style="margin-bottom: 0.8em;"><span class="pillar-num">1.</span> Grounding inquiry in foundational ideas across philosophy, mathematics, and the sciences</p>
+							<p style="margin-bottom: 0.8em;"><span class="pillar-num">2.</span> Exploring the ethical, conceptual, and societal implications of advanced technologies</p>
+							<p><span class="pillar-num">3.</span> Fostering creative, collaborative exploration across disciplines and generations</p>
+						</div>
 					</div>
 				</div>
 			</div>

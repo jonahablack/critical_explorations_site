@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?
+	family=Playfair+Display:wght@400;600
+	&family=Source+Sans+Pro:wght@400;600
+	&display=swap"
+	rel="stylesheet">
+  
   <meta charset="UTF-8">
   <title>Reading List | Critical Explorations Initiative</title>
   <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="icon" type="image/png" href="images/logo.png" />
   <style>
     .reading-list-controls {
       display: flex;
@@ -21,12 +30,17 @@
     }
     .reading-list-grid {
       display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 1.2em;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* wider min */
+      gap: 2em; /* or your preferred gap */
       justify-items: stretch;
       margin-top: 2em;
+      max-width: 1200px; /* optional: center grid and prevent it from being too wide */
+      margin-left: auto;
+      margin-right: auto;
     }
     .reading-list-card {
+      min-width: 220px;
+      max-width: 340px;
       background: white;
       border-radius: 10px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.08);
@@ -90,7 +104,7 @@
       <select id="topic-select" class="reading-list-dropdown">
         <option value="all">All Topics</option>
         <option value="Intelligence: Natural and Artificial">Intelligence: Natural and Artificial</option>
-        <option value="Ethics and Governance in a Digital World">Ethics and Governance in a Digital World</option>
+        <option value="Digital Ethics and Governance">Ethics and Governance in a Digital World</option>
         <option value="Foundations of Knowledge and Inquiry">Foundations of Knowledge and Inquiry</option>
         <option value="Scientific Paradigms and Conceptual Change">Scientific Paradigms and Conceptual Change</option>
         <option value="Human Character and the Good Life">Human Character and the Good Life</option>

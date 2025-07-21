@@ -3809,115 +3809,68 @@ a:hover, a:active {
   padding-left: 0 !important; /* Override global ul padding */
 }
 
-/* Override global ul styles specifically for pillars */
-.pillars-block ul {
-  margin: 0 !important;
-  padding-left: 0 !important;
-  list-style: disc outside !important;
-}
-
-.pillars-block ul li {
-  padding-left: 0 !important;
-  margin-bottom: 0.8em !important;
-}
-
-.pillars-block ul li:last-child {
-  margin-bottom: 0 !important;
-}
-
 /* Ensure footer has proper spacing */
 #footer {
   margin-top: 2em !important;
 }
-
-.hamburger {
-	position: fixed;
-	top: 1.2em;
-	right: 1.2em;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	width: 30px;
-	height: 24px;
-	background: none;
-	border: none;
-	cursor: pointer;
-	z-index: 20002;
+  
+  /* 1. Define container limits, gutters, and header height */
+:root {
+	--page-max-width: 1200px;
+	--page-gutter: clamp(1rem, 4vw, 3rem);
+	--header-min: 80px;
+	--header-max: 160px;
+	--header-vh: 10vh;
+	/* exactly matches your header’s height */
+	--header-height: clamp(var(--header-min), var(--header-vh), var(--header-max));
   }
   
-  .hamburger span {
-	display: block;
-	height: 3px;
-	background: #23253a;
-	border-radius: 2px;
-	transition: all 0.3s ease;
+  /* 2. Centered, responsive page wrapper */
+  #page-wrapper,
+  .page-inner,
+  .inner {
+	max-width: var(--page-max-width);
+	margin: 0 auto;
+	padding-top: var(--header-height);    /* push content below fixed header */
+	padding-inline: var(--page-gutter);
+	box-sizing: border-box;
   }
   
-  .hamburger.open span:nth-child(1) {
-	transform: rotate(45deg) translateY(9px);
-  }
-  .hamburger.open span:nth-child(2) {
-	opacity: 0;
-  }
-  .hamburger.open span:nth-child(3) {
-	transform: rotate(-45deg) translateY(-9px);
-  }
-
-  body {
-	animation: fadeIn 0.3s ease-in;
+  /* 3. Vertical breathing room for sections */
+  #banner,
+  #wrapper,
+  section {
+	padding-block: var(--page-gutter);
   }
   
-  @keyframes fadeIn {
-	from { opacity: 0; }
-	to { opacity: 1; }
-  }
-
-  .mobile-nav {
-	position: fixed;
-	top: 0;
-	left: 0;
+  /* 4. Footer spans full viewport but keeps vertical padding */
+  footer {
 	width: 100vw;
-	height: 100vh;
-	background: #fff;
-	display: none;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	z-index: 30000;
-	opacity: 0;
-	transform: translateY(32px);
-	transition: opacity 0.4s ease, transform 0.4s ease;
+	margin-inline: calc((100% - 100vw) / 2);
+	padding-inline: 0;
+	padding-block: var(--page-gutter);
+	box-sizing: border-box;
   }
   
-  .mobile-nav.show {
-	display: flex;
-	opacity: 1;
-	transform: translateY(0);
+  /* Remove the old “body > *” margin hack */
+  body > *:not(header#header) {
+	margin-top: 0 !important;
+  }
+  /* Body text */
+  body, p, li, input, button {
+	font-family: 'Source Sans Pro', Helvetica, sans-serif;
   }
   
-  .mobile-nav-list {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	display: flex;
-	flex-direction: column;
-	gap: 2em;
-	align-items: center;
+  /* Headings & nav tabs */
+  h1, h2, h3, h4, h5, .main-nav a, .brand {
+	font-family: 'Playfair Display', serif;
+  }
+
+  .banner-lead {
+	font-family: "Playfair Display", serif;
+	/* optionally pick a weight: */
+	font-weight: 600;
   }
   
-  .mobile-nav-list a {
-	font-size: 2em;
-	color: #23253a;
-	font-weight: 700;
-	text-decoration: none;
-	letter-spacing: 0.02em;
-	padding: 0.3em 1.2em;
-	border-radius: 8px;
-	transition: background 0.15s;
-  }
-  
-  .mobile-nav-list a:hover {
-	background: #f3f3f6;
-  }
   
   
