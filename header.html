@@ -1,27 +1,178 @@
-<header id="header" class="alt" style="display: flex; align-items: center; justify-content: flex-start; padding: 0 2em; background: #fff; min-height: 80px; border-bottom: 1px solid #e0e0e0;">
-  <div style="display: flex; align-items: center; gap: 0.7em;">
-    <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
-      <img src="images/logo.png" alt="Critical Explorations Initiative Logo" style="height: 40px; width: auto; margin-right: 0.4em;" />
-      <span style="display: flex; flex-direction: column; font-size: 1.1em; font-weight: 700; color: #23253a; font-family: Raleway, Helvetica, sans-serif; letter-spacing: 0.01em; line-height: 1.1;">
+<header id="header" class="alt">
+  <div class="logo">
+    <a href="index.html">
+      <img src="images/logo.png" alt="Critical Explorations Initiative Logo" />
+      <span class="brand">
         <span>Critical</span>
         <span>Explorations</span>
         <span>Initiative</span>
       </span>
     </a>
   </div>
-  <nav style="margin-left: 2em;">
+
+  <nav class="desktop-nav">
     <ul class="main-nav" style="display: flex; align-items: center; gap: 2em; list-style: none; margin: 0; padding: 0;">
       <li class="dropdown" style="position: relative;">
         <a class="menu-education" style="cursor: pointer; color: #23253a; font-weight: 600; font-size: 1em; text-decoration: none;">Education <span class="arrow" style="font-size: 1em;">&#9662;</span></a>
-        <ul class="submenu" style="position: absolute; right: 0; top: 100%; background: #fff; min-width: 180px; display: none; box-shadow: 0 8px 16px rgba(0,0,0,0.15); border-radius: 0 0 5px 5px; padding: 0.5em 0; z-index: 10001;">
-          <li><a href="past-workshops.html" style="color: #23253a; padding: 0.5em 1.5em; display: block; text-decoration: none;">Past Workshops</a></li>
-          <li><a href="upcoming-workshops.html" style="color: #23253a; padding: 0.5em 1.5em; display: block; text-decoration: none;">Upcoming Workshops</a></li>
-          <li><a href="reading-list.html" style="color: #23253a; padding: 0.5em 1.5em; display: block; text-decoration: none;">Reading List</a></li>
+        <ul class="submenu" style="position: absolute; left: 0; top: 100%; background: #fff; min-width: 180px; display: none; box-shadow: 0 8px 16px rgba(0,0,0,0.15); border-radius: 0 0 5px 5px; padding: 0.5em 0; z-index: 10001;">
+          <li><a href="past-workshops.html">Past Workshops</a></li>
+          <li><a href="upcoming-workshops.html">Upcoming Workshops</a></li>
+          <li><a href="reading-list.html">Reading List</a></li>
         </ul>
       </li>
-      <li><a href="research.html" class="menu-research" style="color: #23253a; font-weight: 600; font-size: 1em; text-decoration: none;">Research</a></li>
-      <li><a href="newsletter.html" class="menu-newsletter" style="color: #23253a; font-weight: 600; font-size: 1em; text-decoration: none;">Newsletter</a></li>
-      <li><a href="about.html" class="menu-about" style="color: #23253a; font-weight: 600; font-size: 1em; text-decoration: none;">About</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="newsletter.html">Newsletter</a></li>
+      <li><a href="about.html">About</a></li>
     </ul>
   </nav>
-</header> 
+
+  <!-- Hamburger trigger -->
+  <button id="hamburger-menu" class="hamburger" type="button" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <!-- Fullscreen Mobile Overlay -->
+  <div id="mobile-nav-overlay">
+    <ul class="mobile-nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="past-workshops.html">Past Workshops</a></li>
+      <li><a href="upcoming-workshops.html">Upcoming Workshops</a></li>
+      <li><a href="reading-list.html">Reading List</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="newsletter.html">Newsletter</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </div>
+
+  <style>
+    /* 1. Container */
+    #header.alt {
+      display: flex;
+      align-items: center;      /* vertical centering */
+      justify-content: space-between;
+    }
+    /* 1. Ensure the dropdown container is the positioning context */
+.dropdown {
+  position: relative;   /* you already have this inline, so you’re good */
+}
+
+/* 2. Show the submenu on hover */
+.dropdown:hover .submenu {
+  right: auto !important;
+  left: 0 !important;
+}
+
+/* 3. Anchor styles inside the submenu */
+.submenu li a {
+  display: block;              /* full-width clickable area */
+  padding: 0.5em 1.5em;        /* your desired vertical & horizontal padding */
+  color: #23253a;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* 4. Hover background for submenu items */
+.submenu li a:hover {
+  background: #f3f3f6;
+}
+
+
+    /* 2. Logo */
+    .logo a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .logo img {
+      height: clamp(48px,6vw,96px);
+      width: auto;
+    }
+    .brand {
+      margin-left: 0.5em;
+      display: flex;
+      flex-direction: column;
+      font: 700 clamp(1em,1.2vw,1.5em)/1.1 Raleway, sans-serif;
+      color: #23253a;
+    }
+    /* 3. Flex-center the tabs and give proportional gaps */
+    .main-nav {
+      display: flex;
+      align-items: center; /* vertical centering of individual <li> */
+      gap: clamp(1em, 2vw, 3em); 
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    /* 4. Scale the tab text size fluidly with the header */
+    .main-nav a {
+      font-size: clamp(1rem, 2vw, 1.5rem);
+      line-height: 1;        /* ensure it sits on the midline */
+      font-weight: 600;
+      color: #23253a;
+      text-decoration: none;
+    }
+
+    /* Hamburger Icon */
+    .hamburger {
+      position:absolute;
+      top:50%; right:clamp(1rem,2vw,2rem);
+      transform:translateY(-50%);
+      display:flex; flex-direction:column;
+      justify-content:space-around;
+      width:clamp(32px,4vw,48px);
+      height:clamp(32px,4vw,48px);
+      background:none; border:none; padding:0;
+      cursor:pointer; z-index:500;
+    }
+    .hamburger span {
+      display:block;
+      width:100%; height:3px;
+      background:#23253a;
+      border-radius:2px;
+      transition:transform .3s ease,opacity .3s ease;
+    }
+    .hamburger.open span:nth-child(1) { transform:rotate(45deg) translate(6px,6px); }
+    .hamburger.open span:nth-child(2) { opacity:0; }
+    .hamburger.open span:nth-child(3) { transform:rotate(-45deg) translate(6px,-6px); }
+
+    /* Fullscreen Mobile Overlay */
+    #mobile-nav-overlay {
+      position:fixed; inset:0;
+      background:#fff;
+      display:flex; flex-direction:column;
+      align-items:center; justify-content:center;
+      opacity:0; pointer-events:none;
+      transform:translateY(-10%);
+      transition:opacity .35s ease, transform .35s ease;
+      z-index:400;
+    }
+    #mobile-nav-overlay.open {
+      opacity:1;
+      pointer-events:auto;
+      transform:translateY(0);
+    }
+    .mobile-nav-list {
+      list-style:none; margin:0; padding:0;
+      display:flex; flex-direction:column;
+      gap:clamp(1em,2vw,2em);
+      align-items:center;
+    }
+    .mobile-nav-list a {
+      color:#23253a;
+      font:600 clamp(1.2em,2.5vw,2em)/1 Raleway,sans-serif;
+      text-decoration:none;
+    }
+
+    /* Show hamburger only under 800px */
+    @media(max-width:800px) {
+      .desktop-nav { display:none; }
+      .hamburger    { display:flex; }
+    }
+
+    @media (min-width: 801px) {
+      #hamburger-menu {
+        display: none !important;
+      }
+    }
+  </style>
+</header>

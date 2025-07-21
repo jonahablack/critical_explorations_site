@@ -1,30 +1,40 @@
-// Loads header.html into the #site-header div and re-initializes dropdown logic
 fetch('header.html')
-  .then(response => response.text())
+  .then(res => res.text())
   .then(html => {
     document.getElementById('site-header').innerHTML = html;
-    // Dropdown logic
+
+    // Dropdown (Education)
     const dropdown = document.querySelector('#site-header .dropdown');
-    const submenu = document.querySelector('#site-header .submenu');
-    const trigger = document.querySelector('#site-header .menu-education');
+    const submenu  = document.querySelector('#site-header .submenu');
+    const trigger  = document.querySelector('#site-header .menu-education');
     if (dropdown && submenu && trigger) {
-      // Toggle submenu on click
-      trigger.addEventListener('click', function(e) {
+      trigger.addEventListener('click', e => {
         e.preventDefault();
-        submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+        submenu.style.display =
+          submenu.style.display === 'block' ? 'none' : 'block';
+        const r = trigger.getBoundingClientRect();
+        submenu.style.top  = `${r.bottom + window.scrollY}px`;
+        submenu.style.left = `${r.left   + window.scrollX}px`;
       });
-      // Hide submenu when clicking outside
-      document.addEventListener('click', function(e) {
-        if (!dropdown.contains(e.target)) {
-          submenu.style.display = 'none';
-        }
+      document.addEventListener('click', e => {
+        if (!dropdown.contains(e.target)) submenu.style.display = 'none';
       });
-      // Keyboard accessibility
-      trigger.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
-        }
+      window.addEventListener('scroll', () => submenu.style.display = 'none');
+      window.addEventListener('resize', () => submenu.style.display = 'none');
+    }
+
+    // Mobile nav & animated hamburger toggle
+    const ham    = document.querySelector('#site-header #hamburger-menu');
+    const overlay= document.querySelector('#site-header #mobile-nav-overlay');
+    if (ham && overlay) {
+      ham.addEventListener('click', () => {
+        ham.classList.toggle('open');
+        overlay.classList.toggle('open');
       });
     }
-  }); 
+  });
+
+
+
+
+
