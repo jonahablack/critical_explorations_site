@@ -3874,9 +3874,9 @@ a:hover, a:active {
 	font-weight: 600;
   }
   
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 600px) {
     body {
-      background-attachment: scroll !important;
+      background-attachment: fixed !important;
       background-size: cover !important;
       background-position: center !important;
     }
