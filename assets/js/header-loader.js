@@ -12,9 +12,6 @@ fetch('header.html')
         e.preventDefault();
         submenu.style.display =
           submenu.style.display === 'block' ? 'none' : 'block';
-        const r = trigger.getBoundingClientRect();
-        submenu.style.top  = `${r.bottom + window.scrollY}px`;
-        submenu.style.left = `${r.left   + window.scrollX}px`;
       });
       document.addEventListener('click', e => {
         if (!dropdown.contains(e.target)) submenu.style.display = 'none';
