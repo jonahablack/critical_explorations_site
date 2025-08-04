@@ -1,24 +1,57 @@
-<!-- Footer -->
-<footer id="footer" class="footer-spread" style="background: #fff; border-top: 1px solid #e0e0e0; padding: 1em 0 0.7em 0;">
-	<div class="inner footer-flex" style="max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: stretch; gap: 3em; min-height: 160px;">
-		<form method="post" action="#" style="flex: 1 1 340px; min-width: 220px; max-width: 400px; text-align: left; margin: 0;">
-			<div style="margin-bottom: 0.7em; font-weight: 600; color: #23253a; font-size: 1em;">Sign up for our mailing list!</div>
-			<div class="field" style="margin-bottom: 0.5em;">
-				<label for="email" style="color: #23253a; font-size: 0.93em;">Email</label>
-				<input type="email" name="email" id="email" style="font-size: 0.93em; padding: 0.25em; border: 1.5px solid #23253a; border-radius: 3px; width: 100%;" />
-			</div>
-			<ul class="actions" style="margin-top: 0.2em;">
-				<li><input type="submit" value="Sign Up" style="font-size: 0.93em; padding: 0.2em 1em;" /></li>
-			</ul>
-		</form>
-		<div style="flex: 1 1 340px; min-width: 220px; max-width: 400px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-size: 0.93em;">
-			<div class="contact" style="margin-bottom: 0.5em;">
-				<div style="font-weight: 600; color: #23253a; margin-bottom: 0.2em;">Critical Explorations Initiative</div>
-				<div class="icon solid fa-envelope"><a href="mailto:info@criticalexplorations.org" style="color: #1a237e;">info@criticalexplorations.org</a></div>
-			</div>
-			<div class="copyright" style="font-size: 0.9em; color: #23253a; margin-top: 0.5em;">
-				&copy; Critical Explorations Initiative. All rights reserved.
-			</div>
-		</div>
-	</div>
-</footer> 
+<!-- Footer (markup only; scripts are attached by footer-loader) -->
+<footer id="footer" class="footer-spread"
+  style="background:#fff;border-top:1px solid #e0e0e0;
+         padding:3rem 0 !important; min-height:320px !important;
+         display:grid !important; place-items:center !important;">
+  <div class="inner footer-flex"
+       style="width:100% !important; max-width:900px !important; margin:0 auto !important;
+              display:flex !important; flex-wrap:wrap !important; gap:3em !important;
+              justify-content:space-between !important; align-items:center !important;">
+
+
+    <form id="email-form"
+          style="
+            flex:1 1 340px; min-width:220px; max-width:400px;
+            text-align:left; margin:0;
+            /* Ensure form content is centered within its own column */
+            display:flex; flex-direction:column; justify-content:center;">
+      <div style="margin-bottom:1em;font-weight:600;color:#23253a;font-size:1em;">
+        Sign up for our mailing list!
+      </div>
+
+      <div id="email-field" class="field" style="margin-bottom:0.7em;">
+        <label for="email" style="color:#23253a;font-size:0.93em;">Email</label>
+        <input type="email" name="email" id="email" required
+               style="font-size:0.93em;padding:0.25em;border:1.5px solid #23253a;border-radius:3px;width:100%;" />
+      </div>
+
+      <ul class="actions" style="margin-top:0.2em;">
+        <li>
+          <button id="submit-btn" type="button"
+                  style="position:relative;z-index:1;font-size:0.85em;padding:0.2em 0.8em;background:#000;color:#fff;border:none;border-radius:3px;cursor:pointer;">
+            Sign Up
+          </button>
+        </li>
+      </ul>
+    </form>
+
+    <div
+      style="
+        flex:1 1 340px; min-width:220px; max-width:400px;
+        display:flex; flex-direction:column; align-items:center !important; justify-content:center !important;
+        text-align:center; font-size:0.93em;">
+      <div class="contact" style="margin-bottom:0.5em;">
+        <div style="font-weight:600;color:#23253a;margin-bottom:0.2em;">Critical Explorations Initiative</div>
+        <div class="icon solid fa-envelope">
+          <a href="mailto:info@criticalexplorations.org" style="color:#1a237e;">info@criticalexplorations.org</a>
+        </div>
+      </div>
+      <div class="copyright" style="font-size:0.9em;color:#23253a;margin-top:0.5em;">
+        &copy; Critical Explorations Initiative. All rights reserved.
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+  
