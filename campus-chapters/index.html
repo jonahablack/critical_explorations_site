@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <title>Critical Explorations Initiative — Campus Chapters</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="../assets/css/main.css" />
+
+  <!-- Page-only CSS: cards + grid (hero/header untouched) -->
+  <style>
+    :root {
+      --cei-ink: #23253a;
+      --cei-muted: #5b607a;
+      --cei-card: rgba(255,255,255,0.92);
+      --cei-shadow: 0 8px 28px rgba(0,0,0,0.12);
+      --cei-radius: 16px;
+      --cei-accent: #4c5c96;
+      --cei-gap: clamp(1rem, 1.8vw, 1.5rem);
+    }
+
+    /* Container under the header hero */
+    .chapters-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: clamp(20px, 4vw, 48px) 1rem clamp(64px, 8vw, 96px);
+    }
+
+    /* Responsive grid */
+    .chapters-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: var(--cei-gap);
+      align-items: stretch;
+    }
+    .span-6 { grid-column: span 6; }
+    .span-12 { grid-column: span 12; }
+
+    @media (max-width: 860px) {
+      .chapters-grid { grid-template-columns: repeat(6, 1fr); }
+      .span-6, .span-12 { grid-column: 1 / -1; }
+    }
+
+    /* Cards */
+    .cei-card {
+      background: var(--cei-card);
+      border-radius: var(--cei-radius);
+      box-shadow: var(--cei-shadow);
+      padding: clamp(18px, 2.2vw, 28px);
+      backdrop-filter: blur(2px);
+      transition: transform .18s ease, box-shadow .18s ease;
+      color: var(--cei-ink);
+      text-align: left;
+    }
+    .cei-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 34px rgba(0,0,0,0.14);
+    }
+    .cei-card h3 {
+      font-family: "Playfair Display", serif;
+      font-weight: 600;
+      font-size: clamp(18px, 2.2vw, 22px);
+      margin: 0 0 .6em;
+      letter-spacing: .02em;
+      color: var(--cei-ink);
+    }
+    .cei-card p {
+      margin: 0 0 1.1em;
+      line-height: 1.65;
+      font-size: clamp(15px, 1.6vw, 17px);
+    }
+
+    /* Buttons (kept neutral, matches your palette) */
+    .btn {
+      display: inline-block;
+      border: 0;
+      border-radius: 12px;
+      padding: .9em 1.1em;
+      font-weight: 600;
+      letter-spacing: .02em;
+      text-decoration: none;
+      cursor: pointer;
+      transition: filter .18s ease, transform .06s ease;
+      background: var(--cei-accent);
+      color: #fff !important;
+      text-align: center;
+      width: 100%;
+    }
+    .btn:active { transform: translateY(1px); }
+
+    /* List */
+    .offer-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .offer-list li {
+      position: relative;
+      padding-left: 28px;
+      margin: .6em 0;
+      line-height: 1.6;
+      font-size: clamp(15px, 1.6vw, 17px);
+    }
+    .offer-list li::before {
+      content: "•";
+      position: absolute;
+      left: 10px;
+      top: 0;
+      color: var(--cei-accent);
+      font-weight: 700;
+    }
+
+    /* Small section label inside cards */
+    .label {
+      font-size: .9rem;
+      color: var(--cei-muted);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: .6rem;
+      display: block;
+    }
+  </style>
+</head>
+<body class="is-preload">
+  <!-- Header (loaded dynamically) -->
+  <div id="site-header"></div>
+
+  <!-- Keep existing hero/header styles from your template -->
+  <section id="wrapper">
+    <header>
+      <div class="inner">
+        <h2>Campus Chapters</h2>
+      </div>
+    </header>
+
+    <!-- Cleaned cards area -->
+    <div class="chapters-content">
+      <div class="chapters-grid">
+        <!-- Start a Chapter -->
+        <article class="cei-card span-6">
+          <span class="label">Get Involved</span>
+          <h3>Start a Chapter</h3>
+          <p>
+            Interested in launching a Critical Explorations chapter at your university? We’re looking for passionate students to start CEI chapters on their campuses. Content and programming can be at your discretion, so long as it accords with our mission and pillars.
+          </p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeXzLbZeb5gBDoQ-ztw4uu3TBDCGZRilxj-Dq1rKHG0PUD6gA/viewform?usp=header" class="btn" target="_blank" rel="noopener">Interest Form</a>
+        </article>
+
+        <!-- Current Chapters -->
+        <article class="cei-card span-6">
+          <span class="label">Find Your Community</span>
+          <h3>Current Chapters</h3>
+          <p>
+            Explore our active campus chapters and connect with organizers near you.
+          </p>
+          <a href="https://docs.google.com/spreadsheets/d/1lW1xOjKGERwQLb2anD6_uJpr5VZkl_ajUQ5jMjXTV2U/edit?gid=0#gid=0" class="btn" target="_blank" rel="noopener">View Chapters</a>
+        </article>
+
+        <!-- What We Offer -->
+        <article class="cei-card span-12">
+          <span class="label">Support</span>
+          <h3>What We Offer</h3>
+          <ul class="offer-list">
+            <li>Access to a national network of students, faculty, and thought leaders</li>
+            <li>Event playbooks, logistics help, and small‑grant guidance</li>
+            <li>Faculty and guest‑speaker connections</li>
+            <li>Curricula, reading packs, and facilitation guides</li>
+            <li>An intellectual community that values rigor, openness, and real‑world impact</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Scripts -->
+  <script src="../assets/js/header-loader.js"></script>
+  <script src="../assets/js/footer-loader.js"></script>
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/jquery.scrollex.min.js"></script>
+  <script src="../assets/js/browser.min.js"></script>
+  <script src="../assets/js/breakpoints.min.js"></script>
+  <script src="../assets/js/util.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
+

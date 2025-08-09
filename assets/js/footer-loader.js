@@ -52,7 +52,7 @@
       const container = document.getElementById("site-footer");
       if (!container) return;
   
-      fetch("footer.html", { cache: "no-store" })
+      fetch("/footer.html", { cache: "no-store" })
         .then((r) => r.text())
         .then((html) => {
           container.innerHTML = html;
