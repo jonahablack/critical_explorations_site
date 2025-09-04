@@ -34,6 +34,24 @@
           </button>
         </li>
       </ul>
+      
+      <script>
+        document.getElementById('submit-btn').addEventListener('click', function() {
+          const email = document.getElementById('email').value;
+          if (email && email.includes('@')) {
+            // Create Google Sheets URL with email parameter
+            const sheetsUrl = 'https://docs.google.com/spreadsheets/d/1p-n-m_3aPmpYyI9fujQEMgravlz2qmcJhP0D9QnWf2Y/edit?gid=0#gid=0';
+            
+            // Open the Google Sheets in a new tab
+            window.open(sheetsUrl, '_blank');
+            
+            // Show success message
+            alert('Thank you for signing up! Please add your email (' + email + ') to the spreadsheet that just opened.');
+          } else {
+            alert('Please enter a valid email address.');
+          }
+        });
+      </script>
     </form>
 
     <div
