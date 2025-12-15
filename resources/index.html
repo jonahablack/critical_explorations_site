@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?
+	family=Playfair+Display:wght@400;600
+	&family=Source+Sans+Pro:wght@400;600
+	&display=swap"
+	rel="stylesheet">
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <title>Resources | Critical Explorations Initiative</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="icon" type="image/png" href="../images/logo.png" />
+  <style>
+    .topics-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2em;
+      margin: 3em auto;
+      max-width: 1200px;
+      padding: 0 1em;
+    }
+    .topic-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      padding: 2.5em 2em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      display: flex;
+      flex-direction: column;
+      min-height: 280px;
+      position: relative;
+      overflow: hidden;
+    }
+    .topic-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #4c5c96, #23253a);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    .topic-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+      border-color: #4c5c96;
+    }
+    .topic-card:hover::before {
+      transform: scaleX(1);
+    }
+    .topic-card.active {
+      border-color: #4c5c96;
+      box-shadow: 0 8px 30px rgba(76, 92, 150, 0.2);
+    }
+    .topic-card.active::before {
+      transform: scaleX(1);
+    }
+    .topic-number {
+      font-size: 1.2em;
+      font-weight: 600;
+      color: #4c5c96;
+      margin-bottom: 0.5em;
+    }
+    .topic-title {
+      font-size: 1.8em;
+      font-weight: 700;
+      color: #23253a;
+      margin-bottom: 1em;
+      line-height: 1.2;
+    }
+    .topic-question {
+      font-size: 1.1em;
+      color: #666;
+      line-height: 1.5;
+      flex-grow: 1;
+    }
+    .reading-list-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5em;
+      justify-items: stretch;
+      margin-top: 2em;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .reading-list-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      padding: 1em 0.7em 0.7em 0.7em;
+      min-width: 200px;
+      max-width: 340px;
+      min-height: 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      font-size: 0.98em;
+      transition: transform 0.15s, box-shadow 0.15s;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUpCard 0.7s forwards;
+    }
+    .reading-list-card:hover {
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.13);
+    }
+    .reading-list-card .book-title {
+      font-weight: 700;
+      color: #23253a;
+      margin-bottom: 0.2em;
+      font-size: 1em;
+    }
+    .reading-list-card .book-author {
+      color: #4c5c96;
+      font-size: 0.95em;
+      margin-bottom: 0.3em;
+    }
+    .reading-list-card .book-desc {
+      color: #444;
+      font-size: 0.93em;
+    }
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2em;
+      padding: 0.7em 1.5em;
+      background: #23253a;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+      font-size: 1em;
+      text-align: center;
+    }
+    .back-button:hover {
+      background: #4c5c96;
+      color: #fff;
+    }
+    @keyframes fadeInUpCard {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @media (max-width: 900px) {
+      .topics-container {
+        grid-template-columns: 1fr;
+        gap: 1.5em;
+      }
+      .topic-card {
+        min-height: 220px;
+        padding: 2em 1.5em;
+      }
+      .topic-title {
+        font-size: 1.5em;
+      }
+      .reading-list-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+    @media (max-width: 600px) {
+      .reading-list-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+      }
+      .reading-list-card {
+        min-width: 0;
+        max-width: 100%;
+        font-size: 1em;
+        box-sizing: border-box;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <div id="site-header"></div>
+  <section style="max-width: 1400px; margin: 3em auto 4em auto; background: none; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); padding: 2.5em;">
+    <div class="page-inner">
+    <h2 style="text-align: center; color: #23253a; font-size: 2em; font-weight: 700; margin-bottom: 1.5em;">Resources</h2>
+    
+    <div id="topics-view">
+      <div class="topics-container">
+        <div class="topic-card" data-topic="Judgment & Agency">
+          <div class="topic-number">1</div>
+          <div class="topic-title">Judgment & Agency</div>
+          <div class="topic-question">How do we learn to think clearly and choose freely?</div>
+        </div>
+        <div class="topic-card" data-topic="Dignity & Technology">
+          <div class="topic-number">2</div>
+          <div class="topic-title">Dignity & Technology</div>
+          <div class="topic-question">What does it mean to stay human in a technological age?</div>
+        </div>
+        <div class="topic-card" data-topic="Community & Civic Life">
+          <div class="topic-number">3</div>
+          <div class="topic-title">Community & Civic Life</div>
+          <div class="topic-question">How can we foster communities that sustain and enrich us?</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="books-view" style="display: none;">
+      <button class="back-button" onclick="showTopics()">← Back to Topics</button>
+      <h3 id="selected-topic-title" style="text-align: center; color: #23253a; font-size: 1.8em; font-weight: 700; margin-bottom: 1.5em;"></h3>
+      <div class="reading-list-grid" id="reading-list-grid">
+        <!-- Book cards will be injected here by JS -->
+      </div>
+    </div>
+    </div>
+  </section>
+  <div id="site-footer"></div>
+  <script src="../assets/js/header-loader.js"></script>
+  <script>
+
+const books = [
+  // Dignity & Technology
+  { topic: "Dignity & Technology", title: "Deep Learning", author: "Ian Goodfellow, Yoshua Bengio, & Aaron Courville", desc: "The definitive textbook on deep learning, covering theory and practical applications." },
+  { topic: "Dignity & Technology", title: "Reinforcement Learning: An Introduction", author: "Richard Sutton & Andrew Barto", desc: "The classic introduction to reinforcement learning, from foundational concepts to advanced topics." },
+  { topic: "Dignity & Technology", title: "Artificial Intelligence: A Modern Approach", author: "Stuart Russell & Peter Norvig", desc: "The standard comprehensive textbook for advanced AI students and practitioners." },
+  { topic: "Dignity & Technology", title: "Probabilistic Graphical Models: Principles and Techniques", author: "Daphne Koller & Nir Friedman", desc: "A deep dive into graphical models and their applications in AI." },
+  { topic: "Dignity & Technology", title: "Information Theory, Inference, and Learning Algorithms", author: "David MacKay", desc: "A mathematically rich text connecting information theory and machine learning." },
+  { topic: "Dignity & Technology", title: "The Alignment Problem", author: "Brian Christian", desc: "A narrative-driven exploration of how researchers are trying to align machine learning systems with human values." },
+  { topic: "Dignity & Technology", title: "Human Compatible", author: "Stuart Russell", desc: "A leading AI researcher proposes a new approach to building provably beneficial AI systems." },
+  { topic: "Dignity & Technology", title: "Gödel, Escher, Bach", author: "Douglas Hofstadter", desc: "A profound and playful exploration of self-reference, cognition, and formal systems.", status: "supplemental" },
+  { topic: "Dignity & Technology", title: "The Book of Why: The New Science of Cause and Effect", author: "Judea Pearl & Dana Mackenzie", desc: "A landmark treatment of causality, essential for building AI that truly reasons." },
+  { topic: "Dignity & Technology", title: "Life 3.0: Being Human in the Age of Artificial Intelligence", author: "Max Tegmark", desc: "A broad look at the future of AI and its impact on society." },
+  { topic: "Dignity & Technology", title: "Superintelligence: Paths, Dangers, Strategies", author: "Nick Bostrom", desc: "A contemporary work on the future of AI and the risks of advanced intelligence." },
+  { topic: "Dignity & Technology", title: "The Ethics of Invention", author: "Sheila Jasanoff", desc: "Explores the co-evolution of science, technology, and law in shaping ethical life." },
+  { topic: "Dignity & Technology", title: "Atlas of AI", author: "Kate Crawford", desc: "A critical mapping of the global systems of labor, data, and politics behind artificial intelligence." },
+  { topic: "Dignity & Technology", title: "Race After Technology", author: "Ruha Benjamin", desc: "Investigates how automation can encode and amplify racial inequality." },
+  { topic: "Dignity & Technology", title: "Surveillance Capitalism", author: "Shoshana Zuboff", desc: "Explores how tech firms extract value from personal data and the consequences for autonomy and democracy." },
+  { topic: "Dignity & Technology", title: "The Anxious Generation", author: "Jonathan Haidt", desc: "A contemporary analysis of the impact of smartphones and social media on youth mental health and society.", status: "supplemental" },
+  { topic: "Dignity & Technology", title: "Technopoly", author: "Neil Postman", desc: "Critiques the unchecked dominance of technology over culture and thought." },
+  { topic: "Dignity & Technology", title: "Amusing Ourselves to Death", author: "Neil Postman", desc: "On how media technology shapes public discourse and thought.", status: "supplemental" },
+  { topic: "Dignity & Technology", title: "Weapons of Math Destruction", author: "Cathy O'Neil", desc: "How big data and algorithms can reinforce inequality and threaten democracy." },
+  { topic: "Dignity & Technology", title: "Moral Machines: Teaching Robots Right from Wrong", author: "Wendell Wallach & Colin Allen", desc: "Explores the foundations of machine ethics and the challenge of embedding moral reasoning in AI." },
+
+  // Judgment & Agency
+  { topic: "Judgment & Agency", title: "Tractatus Logico-Philosophicus", author: "Ludwig Wittgenstein", desc: "A seminal work in analytic philosophy on logic, language, and the limits of thought." },
+  { topic: "Judgment & Agency", title: "Critique of Pure Reason", author: "Immanuel Kant", desc: "A monumental work in philosophy, examining the limits and scope of human understanding." },
+  { topic: "Judgment & Agency", title: "Meditations on First Philosophy", author: "René Descartes", desc: "A classic work introducing radical doubt and the foundations of modern philosophy." },
+  { topic: "Judgment & Agency", title: "How to Do Things with Words", author: "J.L. Austin", desc: "A foundational text in ordinary language philosophy and speech act theory." },
+  { topic: "Judgment & Agency", title: "Lectures on Kant's Political Philosophy", author: "Hannah Arendt", desc: "Arendt's reflection on Kant's Critique of Judgment and the roots of political judgment and public reasoning." },
+  { topic: "Judgment & Agency", title: "The Logic of Scientific Discovery", author: "Karl Popper", desc: "Popper's foundational critique of verificationism and defense of falsification." },
+  { topic: "Judgment & Agency", title: "An Enquiry Concerning Human Understanding", author: "David Hume", desc: "Hume's classic analysis of human cognition, causation, and the limits of induction." },
+  { topic: "Judgment & Agency", title: "Anthropic Bias", author: "Nick Bostrom", desc: "A foundational work on observation selection effects and their implications for science and philosophy." },
+  { topic: "Judgment & Agency", title: "The Structure of Scientific Revolutions", author: "Thomas Kuhn", desc: "Kuhn's classic work on paradigm shifts and the creative process in science." },
+  { topic: "Judgment & Agency", title: "Conceptual Revolutions", author: "Paul Thagard", desc: "A major work on how scientific and philosophical revolutions transform understanding." },
+  { topic: "Judgment & Agency", title: "Science in Action", author: "Bruno Latour", desc: "Challenges traditional views of science by showing how facts are socially constructed." },
+  { topic: "Judgment & Agency", title: "The Act of Creation", author: "Arthur Koestler", desc: "A cross-disciplinary exploration of creativity in art, science, and humor." },
+  { topic: "Judgment & Agency", title: "Creativity: Flow and the Psychology of Discovery and Invention", author: "Mihaly Csikszentmihalyi", desc: "A psychological exploration of how creative individuals work and think.", status: "supplemental" },
+  { topic: "Judgment & Agency", title: "The Creative Mind: Myths and Mechanisms", author: "Margaret Boden", desc: "Boden's influential exploration of the nature of creativity in humans and machines." },
+  { topic: "Judgment & Agency", title: "The Republic", author: "Plato", desc: "A foundational text in Western philosophy, exploring justice, education, and the soul's role in a well-ordered life." },
+  { topic: "Judgment & Agency", title: "Nicomachean Ethics", author: "Aristotle", desc: "Aristotle's influential treatise on virtue, happiness, and what it means to live well." },
+  { topic: "Judgment & Agency", title: "The Enchiridion", author: "Epictetus", desc: "A compact guide to Stoic ethics, emphasizing personal responsibility and resilience." },
+  { topic: "Judgment & Agency", title: "The Human Condition", author: "Hannah Arendt", desc: "Arendt's analysis of labor, work, and action as key modes of human activity in the modern world." },
+  { topic: "Judgment & Agency", title: "Man's Search for Meaning", author: "Viktor E. Frankl", desc: "A moving reflection on survival, purpose, and logotherapy." },
+  { topic: "Judgment & Agency", title: "The Ethics of Authenticity", author: "Charles Taylor", desc: "A critical but sympathetic look at modern individualism and how to recover depth in moral life." },
+  { topic: "Judgment & Agency", title: "Existentialism is a Humanism", author: "Jean-Paul Sartre", desc: "Sartre's concise defense of existentialist ethics and radical responsibility." },
+  { topic: "Judgment & Agency", title: "The Master and His Emissary", author: "Iain McGilchrist", desc: "On hemispheric brain differences and how they shape culture, knowledge, and rationality." },
+  { topic: "Judgment & Agency", title: "Thinking, Fast and Slow", author: "Daniel Kahneman", desc: "Landmark exploration of cognitive biases and dual-system thinking." },
+  { topic: "Judgment & Agency", title: "Noise: A Flaw in Human Judgment", author: "Daniel Kahneman, Olivier Sibony & Cass R. Sunstein", desc: "Examines variability in human judgment and how noise affects decision quality." },
+  { topic: "Judgment & Agency", title: "The Undoing Project", author: "Michael Lewis", desc: "Narrative of the collaboration between Kahneman and Tversky, foundational to behavioral economics." },
+  { topic: "Judgment & Agency", title: "Predictably Irrational", author: "Dan Ariely", desc: "Engaging experiments that reveal the hidden forces shaping our decisions." },
+
+  // Community & Civic Life
+  { topic: "Community & Civic Life", title: "The Constitution of Liberty", author: "F.A. Hayek", desc: "A defense of classical liberalism, exploring how individual freedom and spontaneous order underpin a just society." },
+  { topic: "Community & Civic Life", title: "The Protestant Ethic and the Spirit of Capitalism", author: "Max Weber", desc: "A classic in sociology, exploring the relationship between religion and economic behavior." },
+  { topic: "Community & Civic Life", title: "Democracy in America Vols I & II", author: "Alexis de Tocqueville", desc: "A seminal analysis of American society, democracy, and political culture." },
+  { topic: "Community & Civic Life", title: "Capital", author: "Karl Marx", desc: "A critical analysis of political economy and capitalism, foundational in social science." },
+  { topic: "Community & Civic Life", title: "Seeing Like a State", author: "James C. Scott", desc: "Analyzes how modern states impose simplified, often flawed models on complex societies." },
+  { topic: "Community & Civic Life", title: "Discipline and Punish", author: "Michel Foucault", desc: "A major work on the history of punishment, surveillance, and social control." },
+  { topic: "Community & Civic Life", title: "Violence and the Sacred", author: "René Girard", desc: "An exploration of the role of violence and the sacred in human culture and religion." },
+  { topic: "Community & Civic Life", title: "Things Hidden Since the Foundation of the World", author: "René Girard", desc: "A major work on mimetic theory, violence, and the origins of culture and religion." },
+  { topic: "Community & Civic Life", title: "Anarchy, State, and Utopia", author: "Robert Nozick", desc: "A libertarian critique of redistributive justice, defending minimal state principles." },
+  { topic: "Community & Civic Life", title: "The Death and Life of Great American Cities", author: "Jane Jacobs", desc: "A landmark critique of modern urban planning that defends bottom-up social order." },
+  { topic: "Community & Civic Life", title: "The Need for Roots", author: "Simone Weil", desc: "A vision for rebuilding society on foundations of attention, responsibility, and belonging." },
+  { topic: "Community & Civic Life", title: "A Theory of Justice", author: "John Rawls", desc: "A foundational work proposing principles of justice as fairness for societal structure." },
+  { topic: "Community & Civic Life", title: "After Virtue", author: "Alasdair MacIntyre", desc: "A critique of modern moral philosophy and a call to recover the Aristotelian tradition of virtue." },
+  { topic: "Community & Civic Life", title: "The Road to Serfdom", author: "Friedrich Hayek", desc: "A warning about the dangers of central planning and a defense of individual liberty." },
+];
+
+// Non-book reference materials
+  const references = [
+    { topic: "Dignity & Technology (Reference)", title: "Ethics of Artificial Intelligence and Robotics", source: "Stanford Encyclopedia of Philosophy (online)", desc: "Comprehensive overview of ethical issues in AI and robotics." }
+  ];
+
+
+    function showTopics() {
+      document.getElementById('topics-view').style.display = 'block';
+      document.getElementById('books-view').style.display = 'none';
+      // Remove active class from all cards
+      document.querySelectorAll('.topic-card').forEach(card => {
+        card.classList.remove('active');
+      });
+    }
+
+    function showBooks(topic) {
+      document.getElementById('topics-view').style.display = 'none';
+      document.getElementById('books-view').style.display = 'block';
+      
+      // Update title
+      const topicTitles = {
+        'Judgment & Agency': 'Judgment & Agency',
+        'Dignity & Technology': 'Dignity & Technology',
+        'Community & Civic Life': 'Community & Civic Life'
+      };
+      document.getElementById('selected-topic-title').textContent = topicTitles[topic] || topic;
+      
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      
+      // Render books
+      renderBooks(topic);
+    }
+
+    function renderBooks(topic) {
+      const grid = document.getElementById('reading-list-grid');
+      grid.innerHTML = '';
+      const filtered = books.filter(b => b.topic === topic);
+      
+      if (filtered.length === 0) {
+        grid.innerHTML = '<p style="text-align:center; color:#666; grid-column: 1/-1;">No books found for this topic.</p>';
+        return;
+      }
+      
+      filtered.forEach((book, index) => {
+        const card = document.createElement('div');
+        card.className = 'reading-list-card';
+        card.style.animationDelay = `${index * 0.05}s`;
+        card.innerHTML = `
+          <div class="book-title">${book.title}</div>
+          <div class="book-author">${book.author}</div>
+          <div class="book-desc">${book.desc}</div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    // Add click handlers to topic cards
+    document.querySelectorAll('.topic-card').forEach(card => {
+      card.addEventListener('click', function() {
+        const topic = this.getAttribute('data-topic');
+        // Add active class
+        document.querySelectorAll('.topic-card').forEach(c => c.classList.remove('active'));
+        this.classList.add('active');
+        // Show books for this topic
+        showBooks(topic);
+      });
+    });
+  </script>
+  <!-- Footer (shared across all pages) -->
+  <div id="site-footer"></div>
+  <script src="../assets/js/footer-loader.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html> 
