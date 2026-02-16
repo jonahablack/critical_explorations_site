@@ -8,30 +8,8 @@
   <nav class="desktop-nav">
     <ul class="main-nav" 
         style="display: flex; align-items: center; gap: 2em; list-style: none;">
-      <li class="dropdown" style="position: relative;">
-        <a class="menu-education" style="cursor: pointer; color: #23253a; font-weight: 600; font-size: 1em; text-decoration: none;">Education <span class="arrow" style="font-size: 1em;">&#9662;</span></a>
-        <ul class="submenu"
-            style="position: absolute;
-                  top: 100%;
-                  left: 50%;
-                  transform: translateX(-50%);
-                  background: #fff;
-                  min-width: 210px;
-                  display: none;
-                  box-shadow: 0 12px 32px rgba(0,0,0,0.16);
-                  border-radius: 0 0 14px 14px;
-                  padding: 1.1em 0.2em 1.1em 0.2em;
-                  z-index: 30000;">
-          <style>
-            .submenu a { white-space: nowrap; }
-            .submenu a:hover { background: #f3f3f6 !important; }
-          </style>
-          <li><a href="/past-workshops" style="color: #23253a; padding: 0.8em 2em; display: block; text-decoration: none; font-size: 1.13em; letter-spacing: 0.03em; white-space: nowrap;">Past Workshops</a></li>
-          <li><a href="/upcoming-workshops" style="color: #23253a; padding: 0.8em 2em; display: block; text-decoration: none; font-size: 1.13em; letter-spacing: 0.03em; white-space: nowrap;">Upcoming Workshops</a></li>
-          <li><a href="https://criticalexplorations.notion.site/?v=2cda340bb9d68008a933000cfb4a2b28" target="_blank" rel="noopener" style="color: #23253a; padding: 0.8em 2em; display: block; text-decoration: none; font-size: 1.13em; letter-spacing: 0.03em; white-space: nowrap;">Resources</a></li>
-          <li><a href="/campus-chapters" style="color: #23253a; padding: 0.8em 2em; display: block; text-decoration: none; font-size: 1.13em; letter-spacing: 0.03em; white-space: nowrap;">Campus Chapters</a></li>
-        </ul>
-      </li>
+      <li><a href="https://criticalexplorations.notion.site/?v=2cda340bb9d68008a933000cfb4a2b28" target="_blank" rel="noopener">Resources</a></li>
+      <li><a href="/campus-chapters">On Campus</a></li>
       <li><a href="https://criticalexplorations.substack.com/" target="_blank" rel="noopener">Newsletter</a></li>
       <li><a href="/about">About</a></li>
     </ul>
@@ -46,10 +24,8 @@
   <div id="mobile-nav-overlay">
     <ul class="mobile-nav-list">
       <li><a href="/home">Home</a></li>
-      <li><a href="/past-workshops">Past Workshops</a></li>
-      <li><a href="/upcoming-workshops">Upcoming Workshops</a></li>
       <li><a href="https://criticalexplorations.notion.site/?v=2cda340bb9d68008a933000cfb4a2b28" target="_blank" rel="noopener">Resources</a></li>
-      <li><a href="/campus-chapters">Campus Chapters</a></li>
+      <li><a href="/campus-chapters">On Campus</a></li>
       <li><a href="https://substack.com/" target="_blank" rel="noopener">Newsletter</a></li>
       <li><a href="/about">About</a></li>
     </ul>
@@ -97,6 +73,7 @@
     .main-nav a {
       line-height: 1;        /* ensure it sits on the midline */
       font-weight: 600;
+      font-size: 1.1em;
       color: #23253a;
       text-decoration: none;
     }
